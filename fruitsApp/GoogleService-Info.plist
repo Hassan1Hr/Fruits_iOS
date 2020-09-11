@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>978756403019-svc90oukb39bhndabkspg6olq3ph4vvj.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.978756403019-svc90oukb39bhndabkspg6olq3ph4vvj</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>978756403019-fglop5mj44s6j53m8696msltpvjumtlv.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCeVS0B0F_DQrX7TBYO-mB28c1GeS83ccs</string>
+	<key>GCM_SENDER_ID</key>
+	<string>978756403019</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.tamkeen.azhelha</string>
+	<key>PROJECT_ID</key>
+	<string>ezhalha-824da</string>
+	<key>STORAGE_BUCKET</key>
+	<string>ezhalha-824da.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:978756403019:ios:43f4ba461f1826b52db2ce</string>
+	<key>DATABASE_URL</key>
+	<string>https://ezhalha-824da.firebaseio.com</string>
+</dict>
+</plist>
