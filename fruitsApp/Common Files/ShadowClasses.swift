@@ -42,6 +42,9 @@ class TextFieldShadow: UITextField {
         layer.shadowColor = UIColor.lightGray.cgColor
         layer.shadowOpacity = 0.8
         layer.masksToBounds = false
+        layer.borderColor = UIColor.gray.cgColor
+        layer.borderWidth = 0.5
+        layer.cornerRadius = 5
     }
     override func textRect(forBounds bounds: CGRect) -> CGRect {
         return bounds.inset(by: padding)
@@ -142,6 +145,10 @@ extension UIView{
         self.layer.borderWidth = 0
         backgroundColor = UIColor(named: "gray")
         self.layer.cornerRadius = 5
+    }
+    func removeTextFieldBorder(){
+        layer.borderColor = UIColor.gray.cgColor
+        layer.borderWidth = 0.5
     }
 }
 extension String {

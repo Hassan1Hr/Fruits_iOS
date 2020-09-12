@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		5842653724F2C4DA003DDE22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5842653624F2C4DA003DDE22 /* Assets.xcassets */; };
 		5842653A24F2C4DA003DDE22 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5842653824F2C4DA003DDE22 /* LaunchScreen.storyboard */; };
+		587EDBBF250CA9BB00B5BA35 /* Registeration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 587EDBBE250CA9BB00B5BA35 /* Registeration.storyboard */; };
+		587EDBC4250CB03D00B5BA35 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587EDBC0250CB03C00B5BA35 /* Login.swift */; };
+		587EDBC5250CB03D00B5BA35 /* Sign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587EDBC1250CB03D00B5BA35 /* Sign.swift */; };
+		587EDBC6250CB03D00B5BA35 /* forgetPass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587EDBC2250CB03D00B5BA35 /* forgetPass.swift */; };
+		587EDBC7250CB03D00B5BA35 /* resetPass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587EDBC3250CB03D00B5BA35 /* resetPass.swift */; };
+		587EDBC9250CB3C100B5BA35 /* signUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587EDBC8250CB3C100B5BA35 /* signUp.swift */; };
 		58B366EE250BF4BD00B975C0 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B366D1250BF4B900B975C0 /* Category.swift */; };
 		58B366EF250BF4BD00B975C0 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B366D2250BF4B900B975C0 /* Product.swift */; };
 		58B366F0250BF4BD00B975C0 /* categoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B366D4250BF4B900B975C0 /* categoryCell.swift */; };
@@ -39,6 +45,12 @@
 		5842653624F2C4DA003DDE22 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5842653924F2C4DA003DDE22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5842653B24F2C4DA003DDE22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		587EDBBE250CA9BB00B5BA35 /* Registeration.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Registeration.storyboard; sourceTree = "<group>"; };
+		587EDBC0250CB03C00B5BA35 /* Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		587EDBC1250CB03D00B5BA35 /* Sign.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sign.swift; sourceTree = "<group>"; };
+		587EDBC2250CB03D00B5BA35 /* forgetPass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = forgetPass.swift; sourceTree = "<group>"; };
+		587EDBC3250CB03D00B5BA35 /* resetPass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = resetPass.swift; sourceTree = "<group>"; };
+		587EDBC8250CB3C100B5BA35 /* signUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signUp.swift; sourceTree = "<group>"; };
 		58B366D1250BF4B900B975C0 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		58B366D2250BF4B900B975C0 /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		58B366D4250BF4B900B975C0 /* categoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = categoryCell.swift; sourceTree = "<group>"; };
@@ -97,6 +109,7 @@
 		5842652E24F2C4D8003DDE22 /* fruitsApp */ = {
 			isa = PBXGroup;
 			children = (
+				587EDBBD250CA97900B5BA35 /* Login + Registering Pages */,
 				58B366E4250BF4BB00B975C0 /* Alert for Login */,
 				58B366E8250BF4BC00B975C0 /* Fonts */,
 				58B366EB250BF4BD00B975C0 /* Helpers */,
@@ -113,11 +126,24 @@
 			path = fruitsApp;
 			sourceTree = "<group>";
 		};
+		587EDBBD250CA97900B5BA35 /* Login + Registering Pages */ = {
+			isa = PBXGroup;
+			children = (
+				587EDBBE250CA9BB00B5BA35 /* Registeration.storyboard */,
+				587EDBC0250CB03C00B5BA35 /* Login.swift */,
+				587EDBC1250CB03D00B5BA35 /* Sign.swift */,
+				587EDBC2250CB03D00B5BA35 /* forgetPass.swift */,
+				587EDBC3250CB03D00B5BA35 /* resetPass.swift */,
+			);
+			path = "Login + Registering Pages";
+			sourceTree = "<group>";
+		};
 		58B366D0250BF4B900B975C0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				58B366D1250BF4B900B975C0 /* Category.swift */,
 				58B366D2250BF4B900B975C0 /* Product.swift */,
+				587EDBC8250CB3C100B5BA35 /* signUp.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -164,8 +190,8 @@
 		58B366E1250BF4BB00B975C0 /* Product Details */ = {
 			isa = PBXGroup;
 			children = (
-				58B366E2250BF4BB00B975C0 /* productDetails.swift */,
 				58B366E3250BF4BB00B975C0 /* productDetails.xib */,
+				58B366E2250BF4BB00B975C0 /* productDetails.swift */,
 			);
 			path = "Product Details";
 			sourceTree = "<group>";
@@ -173,8 +199,8 @@
 		58B366E4250BF4BB00B975C0 /* Alert for Login */ = {
 			isa = PBXGroup;
 			children = (
-				58B366E5250BF4BB00B975C0 /* loginAlert.swift */,
 				58B366E6250BF4BB00B975C0 /* loginAlert.xib */,
+				58B366E5250BF4BB00B975C0 /* loginAlert.swift */,
 			);
 			path = "Alert for Login";
 			sourceTree = "<group>";
@@ -280,6 +306,7 @@
 				58B36700250BF4BD00B975C0 /* DroidNaskh-Regular.ttf in Resources */,
 				58B366F9250BF4BD00B975C0 /* GoogleService-Info.plist in Resources */,
 				5842653724F2C4DA003DDE22 /* Assets.xcassets in Resources */,
+				587EDBBF250CA9BB00B5BA35 /* Registeration.storyboard in Resources */,
 				58B366FF250BF4BD00B975C0 /* DroidNaskh-Bold.ttf in Resources */,
 				58B366FB250BF4BD00B975C0 /* productDetails.xib in Resources */,
 				58B366FD250BF4BD00B975C0 /* loginAlert.xib in Resources */,
@@ -357,16 +384,21 @@
 				58B366EE250BF4BD00B975C0 /* Category.swift in Sources */,
 				58B366EF250BF4BD00B975C0 /* Product.swift in Sources */,
 				58B36702250BF4BD00B975C0 /* VerticalStackView.swift in Sources */,
+				587EDBC9250CB3C100B5BA35 /* signUp.swift in Sources */,
 				58B366F2250BF4BD00B975C0 /* productCell.swift in Sources */,
 				58B366F4250BF4BD00B975C0 /* AppDelegate.swift in Sources */,
 				58B366F8250BF4BD00B975C0 /* ShadowClasses.swift in Sources */,
 				58B366F5250BF4BD00B975C0 /* CashedData.swift in Sources */,
+				587EDBC6250CB03D00B5BA35 /* forgetPass.swift in Sources */,
 				58B366FC250BF4BD00B975C0 /* loginAlert.swift in Sources */,
+				587EDBC7250CB03D00B5BA35 /* resetPass.swift in Sources */,
 				58B366F1250BF4BD00B975C0 /* home.swift in Sources */,
 				58B366F0250BF4BD00B975C0 /* categoryCell.swift in Sources */,
 				58B366FA250BF4BD00B975C0 /* productDetails.swift in Sources */,
+				587EDBC5250CB03D00B5BA35 /* Sign.swift in Sources */,
 				58B36701250BF4BD00B975C0 /* UIView+Layout.swift in Sources */,
 				58B366F6250BF4BD00B975C0 /* common.swift in Sources */,
+				587EDBC4250CB03D00B5BA35 /* Login.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

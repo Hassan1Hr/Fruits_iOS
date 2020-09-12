@@ -13,7 +13,7 @@ class common : UIViewController , NVActivityIndicatorViewable{
     
     class func drowbackButton()->UIButton {
         let notifBtn: UIButton = UIButton(type: UIButton.ButtonType.custom)
-        notifBtn.setImage(UIImage(named: "ic_back_black"), for: [])
+        notifBtn.setImage(#imageLiteral(resourceName: "ic_back_arrow"), for: [])
         notifBtn.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
         return notifBtn
         // Do any additional setup after loading the view
@@ -63,7 +63,7 @@ class common : UIViewController , NVActivityIndicatorViewable{
         self.present(linkingVC,animated: true,completion: nil)
     }
     func openRegisteringPage(pagTitle:String,window: Bool = false){
-        let storyboard = UIStoryboard(name: "Login", bundle: nil)
+        let storyboard = UIStoryboard(name: "Registeration", bundle: nil)
         let linkingVC = storyboard.instantiateViewController(withIdentifier: pagTitle) as! UINavigationController
         if window{
             let appDelegate = UIApplication.shared.delegate
@@ -73,13 +73,13 @@ class common : UIViewController , NVActivityIndicatorViewable{
             self.present(linkingVC,animated: true,completion: nil)
         }
     }
- /*   func openMain(){
+    func openMain(){
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let linkingVC = storyboard.instantiateViewController(withIdentifier: "Main") as! MainViewController
+        let linkingVC = storyboard.instantiateViewController(withIdentifier: "home") as! home
         let appDelegate = UIApplication.shared.delegate
         appDelegate?.window??.rootViewController = linkingVC
     }
- */
+ 
     class func AdminLogout(currentController: UIViewController){
             CashedData.saveUserApiKey(token: "")
             openMain(currentController: currentController)

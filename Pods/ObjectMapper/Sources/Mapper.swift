@@ -117,9 +117,9 @@ public final class Mapper<N: BaseMappable> {
 				#if !os(Linux)
 				let exception: NSException
 				if let mapError = error as? MapError {
-					exception = NSException(name: .init(rawValue: "MapError"), reason: mapError.description, userInfo: nil)
+                    exception = NSException(name: .init(rawValue: "MapError"), reason: mapError.description, userInfo: nil)
 				} else {
-					exception = NSException(name: .init(rawValue: "ImmutableMappableError"), reason: error.localizedDescription, userInfo: nil)
+                    exception = NSException(name: .init(rawValue: "ImmutableMappableError"), reason: error.localizedDescription, userInfo: nil)
 				}
 				exception.raise()
 				#endif

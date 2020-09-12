@@ -97,5 +97,10 @@ class productDetails: common{
     }
     @IBAction func addToCart(){
         
+        if CashedData.getUserApiKey() == "" || CashedData.getUserApiKey() == nil{
+            openRegisteringPage(pagTitle: "login")
+        }else{
+            
+        }
     }
 }

@@ -8,19 +8,19 @@
 
 import UIKit
 
-class loginAlert: UIViewController{
+class loginAlert: common{
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
     }
     @IBAction func close(){
-        super.dismiss(animated: true)
+        self.dismiss(animated: true)
     }
     @IBAction func login(){
-        
+        openRegisteringPage(pagTitle: "login")
     }
     @IBAction func signup(){
-        
+        openRegisteringPage(pagTitle: "sign")
     }
 }
