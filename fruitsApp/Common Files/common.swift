@@ -18,23 +18,6 @@ class common : UIViewController , NVActivityIndicatorViewable{
         return notifBtn
         // Do any additional setup after loading the view
     }
-    class func drowCartButton()->UIButton {
-        let notifBtn: UIButton = UIButton(type: UIButton.ButtonType.custom)
-        notifBtn.setImage(UIImage(named: "ic_cart"), for: [])
-        notifBtn.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
-        return notifBtn
-        // Do any additional setup after loading the view
-    }
-    class func drowCartNumber()->UIButton {
-        let notifBtn: UIButton = UIButton(type: UIButton.ButtonType.custom)
-        notifBtn.backgroundColor = UIColor(named: "VividOrange")
-        notifBtn.frame = CGRect(x: 45, y: 0, width: 30, height: 30)
-        notifBtn.layer.cornerRadius = 15
-        notifBtn.layer.masksToBounds = false
-        return notifBtn
-        // Do any additional setup after loading the view
-    }
-  
     func openProductDetails(data: products){
         let loginVC = productDetails(nibName: "productDetails", bundle: nil)
         loginVC.data = data
@@ -75,9 +58,10 @@ class common : UIViewController , NVActivityIndicatorViewable{
     }
     func openMain(){
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let linkingVC = storyboard.instantiateViewController(withIdentifier: "home") as! home
+        let linkingVC = storyboard.instantiateViewController(withIdentifier: "Main") as! UINavigationController
+        let des = linkingVC.viewControllers[0] as! home
         let appDelegate = UIApplication.shared.delegate
-        appDelegate?.window??.rootViewController = linkingVC
+        appDelegate?.window??.rootViewController = des
     }
  
     class func AdminLogout(currentController: UIViewController){
@@ -129,13 +113,6 @@ class common : UIViewController , NVActivityIndicatorViewable{
             }
         }
     }
-    func setupCartButton(number :Int) {
-        self.navigationItem.hidesBackButton = true
-        let backBtn: UIButton = common.drowCartButton()
-        let backButton = UIBarButtonItem(customView: backBtn)
-        backBtn.addTarget(self, action: #selector(self.OpenCart), for: UIControl.Event.touchUpInside)
-        self.navigationItem.setLeftBarButton(backButton, animated: true)
-    }
     
     func setupBackButtonWithPOP() {
         self.navigationItem.hidesBackButton = true
@@ -177,7 +154,7 @@ class common : UIViewController , NVActivityIndicatorViewable{
    
     @objc func OpenCart() {
         let storyboard = UIStoryboard(name: "Cart", bundle: nil)
-        let linkingVC = storyboard.instantiateViewController(withIdentifier: "CartNav") as!
+        let linkingVC = storyboard.instantiateViewController(withIdentifier: "Cart") as!
         UINavigationController
         self.present(linkingVC,animated: true,completion: nil)
     }
@@ -201,7 +178,83 @@ class common : UIViewController , NVActivityIndicatorViewable{
     
    
 }
-
+extension common{
+    func addToCart(productId: Int,weight_unit_id: Int,quantity: Int, completion: @escaping (Bool) -> Void){
+        self.loading()
+        let url = AppDelegate.LocalUrl + "add-to-cart"
+        let headers = [
+            "Content-Type": "application/json" ,
+            "Accept" : "application/json",
+            "Authorization" : "Bearer " + (CashedData.getUserApiKey() ?? "")
+        ]
+        let info = [
+            "product_id": productId,
+            "product_weight_unit_id": weight_unit_id,
+            "quantity": quantity
+        ]
+        AlamofireRequests.PostMethod(methodType: "POST", url: url, info: info, headers: headers){
+            (error, success, jsonData) in
+            do {
+                let decoder = JSONDecoder()
+                if error == nil {
+                    if success {
+                        self.present(common.makeAlert(message: "تم الإضافة بنجاح"), animated: true, completion: nil)
+                        completion(true)
+                        self.stopAnimating()
+                    }else{
+                        let dataRecived = try decoder.decode(ErrorHandle.self, from: jsonData)
+                        self.present(common.makeAlert(message: dataRecived.message ?? ""), animated: true, completion: nil)
+                        self.stopAnimating()
+                    }
+                    
+                }else{
+                    let dataRecived = try decoder.decode(ErrorHandle.self, from: jsonData)
+                    self.present(common.makeAlert(message: dataRecived.message ?? ""), animated: true, completion: nil)
+                    self.stopAnimating()
+                }
+            }catch {
+                self.present(common.makeAlert(), animated: true, completion: nil)
+                self.stopAnimating()
+            }
+        }
+    }
+    
+    func getCartItems(completionHandler: @escaping (cartData?) -> Void){
+        self.loading()
+        let url = AppDelegate.LocalUrl + "cart-items"
+        let headers = [
+            "Content-Type": "application/json" ,
+            "Accept" : "application/json",
+            "Authorization" : "Bearer " + (CashedData.getUserApiKey() ?? "")
+        ]
+        
+        AlamofireRequests.getMethod(url: url, headers: headers){
+            (error, success, jsonData) in
+            do {
+                let decoder = JSONDecoder()
+                if error == nil {
+                    if success {
+                        let dataReceived = try decoder.decode(cart.self, from: jsonData)
+                        completionHandler(dataReceived.data ?? nil)
+                        self.stopAnimating()
+                    }else{
+                        let dataRecived = try decoder.decode(ErrorHandle.self, from: jsonData)
+                        self.present(common.makeAlert(message: dataRecived.message ?? ""), animated: true, completion: nil)
+                        self.stopAnimating()
+                    }
+                    
+                }else{
+                    let dataRecived = try decoder.decode(ErrorHandle.self, from: jsonData)
+                    self.present(common.makeAlert(message: dataRecived.message ?? ""), animated: true, completion: nil)
+                    self.stopAnimating()
+                }
+            }catch {
+                self.present(common.makeAlert(), animated: true, completion: nil)
+                self.stopAnimating()
+            }
+        }
+    }
+}
 
 
 

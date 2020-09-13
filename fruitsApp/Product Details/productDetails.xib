@@ -16,7 +16,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="productDetails" customModule="perfume" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="productDetails" customModule="fruitsApp" customModuleProvider="target">
             <connections>
                 <outlet property="count" destination="813-Z2-no3" id="Kx2-vi-oD5"/>
                 <outlet property="discription" destination="plg-fi-cM4" id="3OR-4A-qkO"/>
@@ -32,7 +32,7 @@
             <rect key="frame" x="0.0" y="0.0" width="322" height="418"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IRv-Ge-JSD" customClass="ViewShadow" customModule="perfume" customModuleProvider="target">
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IRv-Ge-JSD" customClass="ViewShadow" customModule="fruitsApp" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="332" height="418"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tr3-B2-A9P">
@@ -108,7 +108,7 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                             <connections>
-                                                <action selector="addToCart" destination="-1" eventType="touchUpInside" id="LER-Xb-W59"/>
+                                                <action selector="addProductToCart" destination="-1" eventType="touchUpInside" id="LER-Xb-W59"/>
                                             </connections>
                                         </button>
                                     </subviews>

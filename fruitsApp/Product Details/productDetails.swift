@@ -8,7 +8,7 @@
 
 import UIKit
 import DropDown
-class productDetails: common{
+class productDetails: ContentViewController{
     
     //MARK:- Outlets
     @IBOutlet var name:UILabel!
@@ -23,7 +23,7 @@ class productDetails: common{
     var totalCount: Double? = 0.0
     var startFrom: Double? = 0.0
     var data: products? = nil
-    
+    var weight_unit_id = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +34,7 @@ class productDetails: common{
     
     //MARK:- functions
     fileprivate func setupStartPrice(index: Int) {
+        weight_unit_id = data?.weightUnits?[index].id ?? 0
         price.text = data?.weightUnits?[index].weightPrice ??  "0"
         startFrom = Double(data?.weightUnits?[index].startFrom ?? "0")
         count.text = "\(startFrom ?? 0.0)"
@@ -95,12 +96,15 @@ class productDetails: common{
             }
         }
     }
-    @IBAction func addToCart(){
-        
+    @IBAction func addProductToCart(){
+       
         if CashedData.getUserApiKey() == "" || CashedData.getUserApiKey() == nil{
             openRegisteringPage(pagTitle: "login")
         }else{
-            
+            addToCart(productId: data?.id ?? 0, weight_unit_id: weight_unit_id, quantity: Int((totalCount ?? 0)/(startFrom ?? 0))){
+                done in
+                self.getCartItems(id: 1)
+            }
         }
     }
 }

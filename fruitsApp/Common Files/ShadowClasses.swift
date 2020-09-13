@@ -134,6 +134,20 @@ class border: UIView{
         layer.masksToBounds = false
     }
 }
+class borderYellow: UIView{
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.layer.borderWidth = 1.5
+        self.layer.borderColor = UIColor(named: "yellow")?.cgColor
+        self.layer.cornerRadius = 5
+        layer.shadowOffset = CGSize(width: 1, height: 1)
+        layer.shadowRadius = 3
+        layer.shadowOpacity = 0.70
+        layer.shadowColor = UIColor.lightGray.cgColor
+        layer.shadowOpacity = 0.8
+        layer.masksToBounds = false
+    }
+}
 extension UIView{
     func border(){
         self.layer.borderWidth = 1

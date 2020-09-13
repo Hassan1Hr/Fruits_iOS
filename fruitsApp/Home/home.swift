@@ -8,7 +8,7 @@
 
 import UIKit
 
-class home: common {
+class home: ContentViewController {
     var categories = [categoryData]()
     var productsArr = [products]()
     var categorySelected = 0
@@ -17,8 +17,14 @@ class home: common {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         getCategories()
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        getCartItems(id: 1)
+    }
+    
     @IBAction private func scrollingCollectionByButtons(_ sender: UIButton) {
         // Visible Items in collection
         var visibleItems: NSArray = self.categoryCollection.indexPathsForVisibleItems as NSArray
@@ -41,6 +47,22 @@ class home: common {
             nextItem.row = min(categories.count-1,nextItem.row)
             if nextItem.row < categories.count {
                 self.categoryCollection.scrollToItem(at: nextItem, at: .left, animated: true)
+            }
+        }
+    }
+    
+    @IBAction func addProductToCart(sender: UIButton){
+        
+        if CashedData.getUserApiKey() == "" || CashedData.getUserApiKey() == nil{
+            openRegisteringPage(pagTitle: "login")
+        }else{
+            if productsArr[sender.tag].weightUnits?.count ?? 0 > 0{
+                addToCart(productId: productsArr[sender.tag].id ?? 0, weight_unit_id: productsArr[sender.tag].weightUnits?[0].id ?? 0, quantity: 1){
+                    done in
+                    self.getCartItems(id: 1)
+                }
+            }else{
+               present(common.makeAlert(message: "لم يتم إضافة اوزان للمنتج حاليا"),animated: true,completion: nil)
             }
         }
     }
@@ -74,13 +96,14 @@ extension home: UICollectionViewDataSource,UICollectionViewDelegate , UICollecti
             cell.image.sd_setImage(with: URL(string: categories[indexPath.row].imagePath ?? ""))
             if categorySelected == categories[indexPath.row].id ?? 0{
                 cell.imageView.removeBorder()
+                navigationItem.title = categories[indexPath.row].name ?? ""
             }else{
                 cell.imageView.border()
             }
             return cell
         }else{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "products", for: indexPath) as! productCell
-            cell.productCart.tag = productsArr[indexPath.row].id ?? 0
+            cell.productCart.tag = indexPath.row
             cell.productName.text = productsArr[indexPath.row].name ?? ""
             if productsArr[indexPath.row].weightUnits?.count ?? 0 > 0{
                 cell.productPrice.text = "\(productsArr[indexPath.row].weightUnits?[0].weightPrice ?? "0")"

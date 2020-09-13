@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		5842653724F2C4DA003DDE22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5842653624F2C4DA003DDE22 /* Assets.xcassets */; };
 		5842653A24F2C4DA003DDE22 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5842653824F2C4DA003DDE22 /* LaunchScreen.storyboard */; };
+		585F9147250E0F6100EFD0FC /* cartItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585F9146250E0F6100EFD0FC /* cartItemCell.swift */; };
+		585F9149250E2A0200EFD0FC /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585F9148250E2A0200EFD0FC /* ContentViewController.swift */; };
 		587EDBBF250CA9BB00B5BA35 /* Registeration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 587EDBBE250CA9BB00B5BA35 /* Registeration.storyboard */; };
 		587EDBC4250CB03D00B5BA35 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587EDBC0250CB03C00B5BA35 /* Login.swift */; };
 		587EDBC5250CB03D00B5BA35 /* Sign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587EDBC1250CB03D00B5BA35 /* Sign.swift */; };
@@ -36,6 +38,9 @@
 		58B36700250BF4BD00B975C0 /* DroidNaskh-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 58B366EA250BF4BC00B975C0 /* DroidNaskh-Regular.ttf */; };
 		58B36701250BF4BD00B975C0 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B366EC250BF4BD00B975C0 /* UIView+Layout.swift */; };
 		58B36702250BF4BD00B975C0 /* VerticalStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B366ED250BF4BD00B975C0 /* VerticalStackView.swift */; };
+		58CE8A77250E04C300B05751 /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CE8A76250E04C300B05751 /* Cart.swift */; };
+		58CE8A7A250E059800B05751 /* CartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CE8A79250E059800B05751 /* CartController.swift */; };
+		58CE8A7C250E07B400B05751 /* Cart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58CE8A7B250E07B400B05751 /* Cart.storyboard */; };
 		CD759EA83794BB8268C4D0C5 /* Pods_fruitsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 042522D2A3EAEB2EC0E8CD1E /* Pods_fruitsApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +50,8 @@
 		5842653624F2C4DA003DDE22 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5842653924F2C4DA003DDE22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5842653B24F2C4DA003DDE22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		585F9146250E0F6100EFD0FC /* cartItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cartItemCell.swift; sourceTree = "<group>"; };
+		585F9148250E2A0200EFD0FC /* ContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 		587EDBBE250CA9BB00B5BA35 /* Registeration.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Registeration.storyboard; sourceTree = "<group>"; };
 		587EDBC0250CB03C00B5BA35 /* Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		587EDBC1250CB03D00B5BA35 /* Sign.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sign.swift; sourceTree = "<group>"; };
@@ -72,6 +79,9 @@
 		58B366EA250BF4BC00B975C0 /* DroidNaskh-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DroidNaskh-Regular.ttf"; sourceTree = "<group>"; };
 		58B366EC250BF4BD00B975C0 /* UIView+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
 		58B366ED250BF4BD00B975C0 /* VerticalStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerticalStackView.swift; sourceTree = "<group>"; };
+		58CE8A76250E04C300B05751 /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
+		58CE8A79250E059800B05751 /* CartController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartController.swift; sourceTree = "<group>"; };
+		58CE8A7B250E07B400B05751 /* Cart.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Cart.storyboard; sourceTree = "<group>"; };
 		AE8A3119182FD7D0FB950438 /* Pods-fruitsApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fruitsApp.debug.xcconfig"; path = "Target Support Files/Pods-fruitsApp/Pods-fruitsApp.debug.xcconfig"; sourceTree = "<group>"; };
 		C8DC753F23517D4142F061B9 /* Pods-fruitsApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fruitsApp.release.xcconfig"; path = "Target Support Files/Pods-fruitsApp/Pods-fruitsApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -109,13 +119,14 @@
 		5842652E24F2C4D8003DDE22 /* fruitsApp */ = {
 			isa = PBXGroup;
 			children = (
-				587EDBBD250CA97900B5BA35 /* Login + Registering Pages */,
-				58B366E4250BF4BB00B975C0 /* Alert for Login */,
+				58CE8A78250E058100B05751 /* Cart */,
 				58B366E8250BF4BC00B975C0 /* Fonts */,
 				58B366EB250BF4BD00B975C0 /* Helpers */,
+				587EDBBD250CA97900B5BA35 /* Login + Registering Pages */,
+				58B366E4250BF4BB00B975C0 /* Alert for Login */,
+				58B366E1250BF4BB00B975C0 /* Product Details */,
 				58B366D3250BF4B900B975C0 /* Home */,
 				58B366D0250BF4B900B975C0 /* Models */,
-				58B366E1250BF4BB00B975C0 /* Product Details */,
 				58B366D7250BF4BA00B975C0 /* Common Files */,
 				58B366E7250BF4BC00B975C0 /* Main.storyboard */,
 				5842653824F2C4DA003DDE22 /* LaunchScreen.storyboard */,
@@ -144,6 +155,7 @@
 				58B366D1250BF4B900B975C0 /* Category.swift */,
 				58B366D2250BF4B900B975C0 /* Product.swift */,
 				587EDBC8250CB3C100B5BA35 /* signUp.swift */,
+				58CE8A76250E04C300B05751 /* Cart.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -163,6 +175,7 @@
 			children = (
 				58B366D8250BF4BA00B975C0 /* Alamofire */,
 				58B366DD250BF4BA00B975C0 /* Entities */,
+				585F9148250E2A0200EFD0FC /* ContentViewController.swift */,
 				58B366DA250BF4BA00B975C0 /* AppDelegate.swift */,
 				58B366DB250BF4BA00B975C0 /* CashedData.swift */,
 				58B366DC250BF4BA00B975C0 /* common.swift */,
@@ -221,6 +234,16 @@
 				58B366ED250BF4BD00B975C0 /* VerticalStackView.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		58CE8A78250E058100B05751 /* Cart */ = {
+			isa = PBXGroup;
+			children = (
+				58CE8A7B250E07B400B05751 /* Cart.storyboard */,
+				58CE8A79250E059800B05751 /* CartController.swift */,
+				585F9146250E0F6100EFD0FC /* cartItemCell.swift */,
+			);
+			path = Cart;
 			sourceTree = "<group>";
 		};
 		A11537FAFCAD705101AAC4A3 /* Pods */ = {
@@ -309,6 +332,7 @@
 				587EDBBF250CA9BB00B5BA35 /* Registeration.storyboard in Resources */,
 				58B366FF250BF4BD00B975C0 /* DroidNaskh-Bold.ttf in Resources */,
 				58B366FB250BF4BD00B975C0 /* productDetails.xib in Resources */,
+				58CE8A7C250E07B400B05751 /* Cart.storyboard in Resources */,
 				58B366FD250BF4BD00B975C0 /* loginAlert.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -387,11 +411,15 @@
 				587EDBC9250CB3C100B5BA35 /* signUp.swift in Sources */,
 				58B366F2250BF4BD00B975C0 /* productCell.swift in Sources */,
 				58B366F4250BF4BD00B975C0 /* AppDelegate.swift in Sources */,
+				585F9147250E0F6100EFD0FC /* cartItemCell.swift in Sources */,
 				58B366F8250BF4BD00B975C0 /* ShadowClasses.swift in Sources */,
 				58B366F5250BF4BD00B975C0 /* CashedData.swift in Sources */,
+				58CE8A77250E04C300B05751 /* Cart.swift in Sources */,
+				58CE8A7A250E059800B05751 /* CartController.swift in Sources */,
 				587EDBC6250CB03D00B5BA35 /* forgetPass.swift in Sources */,
 				58B366FC250BF4BD00B975C0 /* loginAlert.swift in Sources */,
 				587EDBC7250CB03D00B5BA35 /* resetPass.swift in Sources */,
+				585F9149250E2A0200EFD0FC /* ContentViewController.swift in Sources */,
 				58B366F1250BF4BD00B975C0 /* home.swift in Sources */,
 				58B366F0250BF4BD00B975C0 /* categoryCell.swift in Sources */,
 				58B366FA250BF4BD00B975C0 /* productDetails.swift in Sources */,

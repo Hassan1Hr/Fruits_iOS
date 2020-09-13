@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="37D-tE-IkC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6SM-tm-n1y">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -54,7 +54,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="81A-eo-xtE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-822" y="82"/>
+            <point key="canvasLocation" x="86.956521739130437" y="81.696428571428569"/>
         </scene>
         <!--الرئيسية-->
         <scene sceneID="ln9-A0-jym">
@@ -65,7 +65,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="JcB-ur-URY">
-                                <rect key="frame" x="30" y="44" width="354" height="150"/>
+                                <rect key="frame" x="30" y="88" width="354" height="150"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="j0D-PJ-ply"/>
@@ -130,7 +130,7 @@
                                 </connections>
                             </collectionView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="TwB-pE-fdh">
-                                <rect key="frame" x="20" y="194" width="374" height="668"/>
+                                <rect key="frame" x="20" y="238" width="374" height="624"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="eIj-eY-aLW">
                                     <size key="itemSize" width="156" height="172"/>
@@ -165,6 +165,9 @@
                                                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <state key="normal" image="ic_order"/>
+                                                                            <connections>
+                                                                                <action selector="addProductToCartWithSender:" destination="37D-tE-IkC" eventType="touchUpInside" id="NUl-of-S4n"/>
+                                                                            </connections>
                                                                         </button>
                                                                     </subviews>
                                                                     <color key="backgroundColor" name="gray"/>
@@ -246,7 +249,7 @@
                                 </connections>
                             </collectionView>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6I1-7B-LbG">
-                                <rect key="frame" x="384" y="109" width="20" height="20"/>
+                                <rect key="frame" x="389" y="153" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="S0R-dj-Oso"/>
                                     <constraint firstAttribute="width" constant="20" id="wNk-Tt-Fl5"/>
@@ -257,7 +260,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d6f-13-QRn">
-                                <rect key="frame" x="10" y="109" width="20" height="20"/>
+                                <rect key="frame" x="5" y="153" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="20" id="XNf-dt-yzo"/>
                                     <constraint firstAttribute="height" constant="20" id="pC2-4m-Ryt"/>
@@ -271,7 +274,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="6I1-7B-LbG" firstAttribute="centerY" secondItem="JcB-ur-URY" secondAttribute="centerY" id="FeY-ba-nrE"/>
-                            <constraint firstItem="d6f-13-QRn" firstAttribute="leading" secondItem="dLN-hB-sVh" secondAttribute="leading" constant="10" id="Ikg-Rb-geE"/>
+                            <constraint firstItem="d6f-13-QRn" firstAttribute="leading" secondItem="dLN-hB-sVh" secondAttribute="leading" constant="5" id="Ikg-Rb-geE"/>
                             <constraint firstItem="TwB-pE-fdh" firstAttribute="leading" secondItem="dLN-hB-sVh" secondAttribute="leading" constant="20" id="LCH-Ju-tgh"/>
                             <constraint firstItem="JcB-ur-URY" firstAttribute="leading" secondItem="dLN-hB-sVh" secondAttribute="leading" constant="30" id="NR8-cp-ffr"/>
                             <constraint firstItem="dLN-hB-sVh" firstAttribute="bottom" secondItem="TwB-pE-fdh" secondAttribute="bottom" id="Q5C-H7-1Va"/>
@@ -279,17 +282,41 @@
                             <constraint firstItem="dLN-hB-sVh" firstAttribute="trailing" secondItem="JcB-ur-URY" secondAttribute="trailing" constant="30" id="SS1-Un-WDt"/>
                             <constraint firstItem="dLN-hB-sVh" firstAttribute="trailing" secondItem="TwB-pE-fdh" secondAttribute="trailing" constant="20" id="USf-wy-UjK"/>
                             <constraint firstItem="d6f-13-QRn" firstAttribute="centerY" secondItem="JcB-ur-URY" secondAttribute="centerY" id="Y2Q-Gd-Qoq"/>
-                            <constraint firstItem="6I1-7B-LbG" firstAttribute="trailing" secondItem="dLN-hB-sVh" secondAttribute="trailing" constant="-10" id="m7f-zC-Frc"/>
+                            <constraint firstItem="6I1-7B-LbG" firstAttribute="trailing" secondItem="dLN-hB-sVh" secondAttribute="trailing" constant="-5" id="m7f-zC-Frc"/>
                             <constraint firstItem="JcB-ur-URY" firstAttribute="top" secondItem="dLN-hB-sVh" secondAttribute="top" id="qRW-p9-m6N"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dLN-hB-sVh"/>
                     </view>
+                    <navigationItem key="navigationItem" id="47x-A7-gpX"/>
                     <connections>
                         <outlet property="categoryCollection" destination="JcB-ur-URY" id="WyL-dS-GVH"/>
                         <outlet property="productCollection" destination="TwB-pE-fdh" id="f7C-Ci-XPL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gZ6-8e-GNY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-918.84057971014499" y="81.696428571428569"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="9jy-Xu-ga7">
+            <objects>
+                <navigationController storyboardIdentifier="Main" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="6SM-tm-n1y" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="5yO-LC-4Zl">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" name="yellow"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="DroidArabicNaskh-Bold" family="Droid Arabic Naskh" pointSize="16"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="37D-tE-IkC" kind="relationship" relationship="rootViewController" id="FQm-fa-lH6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jLo-Kz-9ON" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1828.985507246377" y="81.696428571428569"/>
         </scene>
@@ -305,6 +332,9 @@
         </namedColor>
         <namedColor name="gray">
             <color red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="yellow">
+            <color red="0.99607843137254903" green="0.85490196078431369" blue="0.062745098039215685" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
