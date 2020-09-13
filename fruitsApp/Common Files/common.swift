@@ -59,9 +59,8 @@ class common : UIViewController , NVActivityIndicatorViewable{
     func openMain(){
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let linkingVC = storyboard.instantiateViewController(withIdentifier: "Main") as! UINavigationController
-        let des = linkingVC.viewControllers[0] as! home
         let appDelegate = UIApplication.shared.delegate
-        appDelegate?.window??.rootViewController = des
+        appDelegate?.window??.rootViewController = linkingVC
     }
  
     class func AdminLogout(currentController: UIViewController){
@@ -235,6 +234,41 @@ extension common{
                 if error == nil {
                     if success {
                         let dataReceived = try decoder.decode(cart.self, from: jsonData)
+                        completionHandler(dataReceived.data ?? nil)
+                        self.stopAnimating()
+                    }else{
+                        let dataRecived = try decoder.decode(ErrorHandle.self, from: jsonData)
+                        self.present(common.makeAlert(message: dataRecived.message ?? ""), animated: true, completion: nil)
+                        self.stopAnimating()
+                    }
+                    
+                }else{
+                    let dataRecived = try decoder.decode(ErrorHandle.self, from: jsonData)
+                    self.present(common.makeAlert(message: dataRecived.message ?? ""), animated: true, completion: nil)
+                    self.stopAnimating()
+                }
+            }catch {
+                self.present(common.makeAlert(), animated: true, completion: nil)
+                self.stopAnimating()
+            }
+        }
+    }
+    
+    func getConfig(completionHandler: @escaping (configData?) -> Void){
+        self.loading()
+        let url = AppDelegate.LocalUrl + "get-configs"
+        let headers = [
+            "Content-Type": "application/json" ,
+            "Accept" : "application/json"
+        ]
+        
+        AlamofireRequests.getMethod(url: url, headers: headers){
+            (error, success, jsonData) in
+            do {
+                let decoder = JSONDecoder()
+                if error == nil {
+                    if success {
+                        let dataReceived = try decoder.decode(config.self, from: jsonData)
                         completionHandler(dataReceived.data ?? nil)
                         self.stopAnimating()
                     }else{

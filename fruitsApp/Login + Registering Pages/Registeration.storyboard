@@ -78,7 +78,7 @@
                                                                                 </constraints>
                                                                                 <color key="textColor" name="Walnut"/>
                                                                                 <fontDescription key="fontDescription" name="DroidArabicNaskh-Bold" family="Droid Arabic Naskh" pointSize="16"/>
-                                                                                <textInputTraits key="textInputTraits" keyboardAppearance="alert"/>
+                                                                                <textInputTraits key="textInputTraits" keyboardType="alphabet" keyboardAppearance="alert"/>
                                                                             </textField>
                                                                         </subviews>
                                                                     </stackView>
@@ -331,7 +331,7 @@
                                                                                 <rect key="frame" x="0.0" y="55" width="344" height="50"/>
                                                                                 <color key="textColor" name="Walnut"/>
                                                                                 <fontDescription key="fontDescription" name="DroidArabicNaskh-Bold" family="Droid Arabic Naskh" pointSize="16"/>
-                                                                                <textInputTraits key="textInputTraits" keyboardAppearance="alert" secureTextEntry="YES"/>
+                                                                                <textInputTraits key="textInputTraits" keyboardType="alphabet" keyboardAppearance="alert" secureTextEntry="YES"/>
                                                                             </textField>
                                                                         </subviews>
                                                                     </stackView>

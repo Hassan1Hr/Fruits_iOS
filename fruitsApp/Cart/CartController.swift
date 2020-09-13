@@ -12,22 +12,32 @@ import UIKit
 class cartController: common {
     
     @IBOutlet var cartItemCollection: UICollectionView!
+    @IBOutlet var totalCostLabel: UILabel!
+    @IBOutlet var shipping: UILabel!
     
     var data: cartData?
-    var quantities = [Int]()
-    var totalCost:Double? = 0.0
+    var totalCosts:Double = 0.0
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navigationItem.title = "العربة"
         setupBackButtonWithDismiss()
+        getConfig{
+            data in
+            self.shipping.text = (data?.shippingValue ?? "0").replacingOccurrences(of: ".00", with: "")
+        }
         getCartItems{
             data in
             self.data = data
+            self.totalCostLabel.text = data?.totalCost ?? "0"
             self.cartItemCollection.reloadData()
         }
+        
     }
-    
+    fileprivate func updateTotalCost(){
+        totalCostLabel.text = "\(totalCosts + (Double(shipping.text ?? "0.0") ?? 0.0))"
+        totalCosts = 0.0
+    }
     @IBAction func deleteItem(sender: UIButton){
         deleteCartItem(index: sender.tag)
     }
@@ -64,9 +74,14 @@ extension cartController: UICollectionViewDelegate, UICollectionViewDataSource{
         cell.unit.text = item?.weightUnit ?? ""
         cell.quantity.text = item?.quantity ?? "0"
         cell.price.text = item?.totalCost ?? "0"
+        self.totalCosts += Double(item?.totalCost ?? "0") ?? 0.0
         cell.remove.tag = indexPath.row
         cell.plus.tag = indexPath.row
         cell.minus.tag = indexPath.row
+        
+        if indexPath.row+1 == data?.items?.count {
+            updateTotalCost()
+        }
         return cell
     }
     

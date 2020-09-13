@@ -17,6 +17,7 @@
 		587EDBC6250CB03D00B5BA35 /* forgetPass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587EDBC2250CB03D00B5BA35 /* forgetPass.swift */; };
 		587EDBC7250CB03D00B5BA35 /* resetPass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587EDBC3250CB03D00B5BA35 /* resetPass.swift */; };
 		587EDBC9250CB3C100B5BA35 /* signUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587EDBC8250CB3C100B5BA35 /* signUp.swift */; };
+		5894D9E8250EBC310097ABA3 /* config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5894D9E7250EBC310097ABA3 /* config.swift */; };
 		58B366EE250BF4BD00B975C0 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B366D1250BF4B900B975C0 /* Category.swift */; };
 		58B366EF250BF4BD00B975C0 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B366D2250BF4B900B975C0 /* Product.swift */; };
 		58B366F0250BF4BD00B975C0 /* categoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B366D4250BF4B900B975C0 /* categoryCell.swift */; };
@@ -58,6 +59,7 @@
 		587EDBC2250CB03D00B5BA35 /* forgetPass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = forgetPass.swift; sourceTree = "<group>"; };
 		587EDBC3250CB03D00B5BA35 /* resetPass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = resetPass.swift; sourceTree = "<group>"; };
 		587EDBC8250CB3C100B5BA35 /* signUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signUp.swift; sourceTree = "<group>"; };
+		5894D9E7250EBC310097ABA3 /* config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = config.swift; sourceTree = "<group>"; };
 		58B366D1250BF4B900B975C0 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		58B366D2250BF4B900B975C0 /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		58B366D4250BF4B900B975C0 /* categoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = categoryCell.swift; sourceTree = "<group>"; };
@@ -119,11 +121,11 @@
 		5842652E24F2C4D8003DDE22 /* fruitsApp */ = {
 			isa = PBXGroup;
 			children = (
-				58CE8A78250E058100B05751 /* Cart */,
 				58B366E8250BF4BC00B975C0 /* Fonts */,
 				58B366EB250BF4BD00B975C0 /* Helpers */,
 				587EDBBD250CA97900B5BA35 /* Login + Registering Pages */,
 				58B366E4250BF4BB00B975C0 /* Alert for Login */,
+				58CE8A78250E058100B05751 /* Cart */,
 				58B366E1250BF4BB00B975C0 /* Product Details */,
 				58B366D3250BF4B900B975C0 /* Home */,
 				58B366D0250BF4B900B975C0 /* Models */,
@@ -156,6 +158,7 @@
 				58B366D2250BF4B900B975C0 /* Product.swift */,
 				587EDBC8250CB3C100B5BA35 /* signUp.swift */,
 				58CE8A76250E04C300B05751 /* Cart.swift */,
+				5894D9E7250EBC310097ABA3 /* config.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -416,6 +419,7 @@
 				58B366F5250BF4BD00B975C0 /* CashedData.swift in Sources */,
 				58CE8A77250E04C300B05751 /* Cart.swift in Sources */,
 				58CE8A7A250E059800B05751 /* CartController.swift in Sources */,
+				5894D9E8250EBC310097ABA3 /* config.swift in Sources */,
 				587EDBC6250CB03D00B5BA35 /* forgetPass.swift in Sources */,
 				58B366FC250BF4BD00B975C0 /* loginAlert.swift in Sources */,
 				587EDBC7250CB03D00B5BA35 /* resetPass.swift in Sources */,

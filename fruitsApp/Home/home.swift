@@ -52,7 +52,7 @@ class home: ContentViewController {
     }
     
     @IBAction func addProductToCart(sender: UIButton){
-        
+       // openRegisteringPage(pagTitle: "login")
         if CashedData.getUserApiKey() == "" || CashedData.getUserApiKey() == nil{
             openRegisteringPage(pagTitle: "login")
         }else{
