@@ -17,6 +17,8 @@ class cartController: common {
     
     var data: cartData?
     var totalCosts:Double = 0.0
+    var Editing = false
+    var isBack = false
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,6 +36,20 @@ class cartController: common {
         }
         
     }
+    override func setupBackButtonWithDismiss() {
+        self.navigationItem.hidesBackButton = true
+        let backBtn: UIButton = common.drowbackButton()
+        let backButton = UIBarButtonItem(customView: backBtn)
+        self.navigationItem.setRightBarButton(backButton, animated: true)
+        backBtn.addTarget(self, action: #selector(self.Dismiss), for: UIControl.Event.touchUpInside)
+    }
+    @objc override func Dismiss() {
+        if isEditing == false{
+            self.navigationController?.dismiss(animated: true)
+        }
+        self.isBack = true
+        self.saveCartItemsAfterEditing()
+    }
     fileprivate func updateTotalCost(){
         totalCostLabel.text = "\(totalCosts + (Double(shipping.text ?? "0.0") ?? 0.0))"
         totalCosts = 0.0
@@ -46,6 +62,7 @@ class cartController: common {
             data?.items?[sender.tag].totalCost =
             "\((Double(data?.items?[sender.tag].totalCost ?? "0") ?? 0.0) + p )"
             data?.items?[sender.tag].quantity = "\((Int(data?.items?[sender.tag].quantity ?? "0") ?? 0) + 1)"
+            self.Editing = true
             self.cartItemCollection.reloadData()
         }
     }
@@ -57,6 +74,7 @@ class cartController: common {
             data?.items?[sender.tag].totalCost =
             "\((Double(data?.items?[sender.tag].totalCost ?? "0") ?? 0.0) - p )"
             data?.items?[sender.tag].quantity = "\((Int(data?.items?[sender.tag].quantity ?? "0") ?? 0) - 1)"
+            self.Editing = true
             self.cartItemCollection.reloadData()
         }
     }
@@ -127,6 +145,54 @@ extension cartController{
             }
         }
     }
+    @IBAction func saveCartItemsAfterEditing(){
+        if Editing == false{
+            return
+        }
+    
+        self.loading()
+        let url = AppDelegate.LocalUrl + "edit-cart-item"
+        let headers = [
+            "Content-Type": "application/json" ,
+            "Accept" : "application/json",
+            "Authorization" : "Bearer " + (CashedData.getUserApiKey() ?? "")
+        ]
+        var items = [ItemAfterEditing]()
+        for item in data?.items ?? []{
+            let weightunitId = item.product?.weightUnits?.first(where: {$0.weightUnit == item.weightUnit})?.id
+            items.append(.init(product_id: "\(item.product?.id ?? 0)", product_weight_unit_id: "\(weightunitId ?? 0)", quantity: item.quantity ?? "0"))
+        }
+        let cartItemsAfterEditing = uploadCart(cart_id: data?.cartID ?? 0, items: items)
+        let data = try! JSONEncoder.init().encode(cartItemsAfterEditing)
+        let dictionaryy = try! JSONSerialization.jsonObject(with: data) as! [String: Any]
+        AlamofireRequests.PostMethod(methodType: "PUT", url: url, info: dictionaryy, headers: headers){
+            (error, success, jsonData) in
+            do {
+                let decoder = JSONDecoder()
+                if error == nil {
+                    if success {
+                        if self.isBack{
+                            self.isBack = false
+                            self.navigationController?.dismiss(animated: true)
+                        }
+                        self.stopAnimating()
+                    }else{
+                        let dataRecived = try decoder.decode(ErrorHandle.self, from: jsonData)
+                        self.present(common.makeAlert(message: dataRecived.message ?? ""), animated: true, completion: nil)
+                        self.stopAnimating()
+                    }
+                    
+                }else{
+                    let dataRecived = try decoder.decode(ErrorHandle.self, from: jsonData)
+                    self.present(common.makeAlert(message: dataRecived.message ?? ""), animated: true, completion: nil)
+                    self.stopAnimating()
+                }
+            }catch {
+                self.present(common.makeAlert(), animated: true, completion: nil)
+                self.stopAnimating()
+            }
+        }
+    }
 }
 
 
@@ -140,12 +206,12 @@ struct uploadCart: Codable{
     let items: [ItemAfterEditing]
 }
 struct ItemAfterEditing : Codable{
-    internal init(product_id: Int, product_weight_unit_id: Int, quantity: Int) {
+    internal init(product_id: String, product_weight_unit_id: String, quantity: String) {
         self.product_id = product_id
         self.product_weight_unit_id = product_weight_unit_id
         self.quantity = quantity
     }
     
-    let product_id,product_weight_unit_id,quantity: Int
+    let product_id,product_weight_unit_id,quantity: String
     
 }
