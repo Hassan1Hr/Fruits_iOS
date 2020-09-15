@@ -11,6 +11,8 @@
 		5842653A24F2C4DA003DDE22 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5842653824F2C4DA003DDE22 /* LaunchScreen.storyboard */; };
 		585F9147250E0F6100EFD0FC /* cartItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585F9146250E0F6100EFD0FC /* cartItemCell.swift */; };
 		585F9149250E2A0200EFD0FC /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585F9148250E2A0200EFD0FC /* ContentViewController.swift */; };
+		58740EF32510A7950046A2C3 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58740EF22510A7950046A2C3 /* Setting.storyboard */; };
+		58740EF52510A7AB0046A2C3 /* settingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58740EF42510A7AB0046A2C3 /* settingController.swift */; };
 		587EDBBF250CA9BB00B5BA35 /* Registeration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 587EDBBE250CA9BB00B5BA35 /* Registeration.storyboard */; };
 		587EDBC4250CB03D00B5BA35 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587EDBC0250CB03C00B5BA35 /* Login.swift */; };
 		587EDBC5250CB03D00B5BA35 /* Sign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587EDBC1250CB03D00B5BA35 /* Sign.swift */; };
@@ -53,6 +55,8 @@
 		5842653B24F2C4DA003DDE22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		585F9146250E0F6100EFD0FC /* cartItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cartItemCell.swift; sourceTree = "<group>"; };
 		585F9148250E2A0200EFD0FC /* ContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
+		58740EF22510A7950046A2C3 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
+		58740EF42510A7AB0046A2C3 /* settingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingController.swift; sourceTree = "<group>"; };
 		587EDBBE250CA9BB00B5BA35 /* Registeration.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Registeration.storyboard; sourceTree = "<group>"; };
 		587EDBC0250CB03C00B5BA35 /* Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		587EDBC1250CB03D00B5BA35 /* Sign.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sign.swift; sourceTree = "<group>"; };
@@ -121,6 +125,7 @@
 		5842652E24F2C4D8003DDE22 /* fruitsApp */ = {
 			isa = PBXGroup;
 			children = (
+				58740EF12510A77E0046A2C3 /* Setting */,
 				58B366E8250BF4BC00B975C0 /* Fonts */,
 				58B366EB250BF4BD00B975C0 /* Helpers */,
 				587EDBBD250CA97900B5BA35 /* Login + Registering Pages */,
@@ -137,6 +142,15 @@
 				58B366E0250BF4BA00B975C0 /* GoogleService-Info.plist */,
 			);
 			path = fruitsApp;
+			sourceTree = "<group>";
+		};
+		58740EF12510A77E0046A2C3 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				58740EF22510A7950046A2C3 /* Setting.storyboard */,
+				58740EF42510A7AB0046A2C3 /* settingController.swift */,
+			);
+			path = Setting;
 			sourceTree = "<group>";
 		};
 		587EDBBD250CA97900B5BA35 /* Login + Registering Pages */ = {
@@ -336,6 +350,7 @@
 				58B366FF250BF4BD00B975C0 /* DroidNaskh-Bold.ttf in Resources */,
 				58B366FB250BF4BD00B975C0 /* productDetails.xib in Resources */,
 				58CE8A7C250E07B400B05751 /* Cart.storyboard in Resources */,
+				58740EF32510A7950046A2C3 /* Setting.storyboard in Resources */,
 				58B366FD250BF4BD00B975C0 /* loginAlert.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -430,6 +445,7 @@
 				587EDBC5250CB03D00B5BA35 /* Sign.swift in Sources */,
 				58B36701250BF4BD00B975C0 /* UIView+Layout.swift in Sources */,
 				58B366F6250BF4BD00B975C0 /* common.swift in Sources */,
+				58740EF52510A7AB0046A2C3 /* settingController.swift in Sources */,
 				587EDBC4250CB03D00B5BA35 /* Login.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

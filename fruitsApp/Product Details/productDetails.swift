@@ -14,7 +14,7 @@ class productDetails: ContentViewController{
     @IBOutlet var name:UILabel!
     @IBOutlet var price:UILabel!
     @IBOutlet var image: UIImageView!
-    @IBOutlet var discription: UILabel!
+    @IBOutlet var discription: UITextView!
     @IBOutlet var count: UILabel!
     @IBOutlet var dropButton: UIButton!
     
@@ -28,6 +28,7 @@ class productDetails: ContentViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        discription.delegate = self
         setupData()
         setupDropDown(dropButton)
     }
@@ -106,5 +107,10 @@ class productDetails: ContentViewController{
                 self.getCartItems(id: 1)
             }
         }
+    }
+}
+extension productDetails: UITextViewDelegate{
+    func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
+        return false
     }
 }
