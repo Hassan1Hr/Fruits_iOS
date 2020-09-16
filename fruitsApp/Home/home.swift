@@ -22,6 +22,9 @@ class home: ContentViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        AppDelegate.badge[1].removeFromSuperlayer()
+        AppDelegate.badge[1] = CAShapeLayer()
+        AppDelegate.firstBadge[1] = true
         getCartItems(id: 1)
     }
     
@@ -52,7 +55,7 @@ class home: ContentViewController {
     }
     
     @IBAction func addProductToCart(sender: UIButton){
-        // openRegisteringPage(pagTitle: "login")
+        openRegisteringPage(pagTitle: "login")
         if CashedData.getUserApiKey() == "" || CashedData.getUserApiKey() == nil{
             openRegisteringPage(pagTitle: "login")
         }else{

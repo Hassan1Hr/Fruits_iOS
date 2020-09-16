@@ -63,9 +63,9 @@ class common : UIViewController , NVActivityIndicatorViewable{
         appDelegate?.window??.rootViewController = linkingVC
     }
  
-    class func AdminLogout(currentController: UIViewController){
+    func AdminLogout(currentController: UIViewController){
             CashedData.saveUserApiKey(token: "")
-            openMain(currentController: currentController)
+            openMain()
     }
     
     func loading(_ message:String = ""){
@@ -145,12 +145,6 @@ class common : UIViewController , NVActivityIndicatorViewable{
         let appDelegate = UIApplication.shared.delegate
         appDelegate?.window??.rootViewController = linkingVC
     }
-    
-    class func openMain(currentController: UIViewController){
-        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
-        UIApplication.shared.keyWindow?.rootViewController = storyboard.instantiateInitialViewController()
-    }
-   
     @objc func OpenCart() {
         let storyboard = UIStoryboard(name: "Cart", bundle: nil)
         let linkingVC = storyboard.instantiateViewController(withIdentifier: "Cart") as!
@@ -237,8 +231,8 @@ extension common{
                         completionHandler(dataReceived.data ?? nil)
                         self.stopAnimating()
                     }else{
-                        let dataRecived = try decoder.decode(ErrorHandle.self, from: jsonData)
-                        self.present(common.makeAlert(message: dataRecived.message ?? ""), animated: true, completion: nil)
+//                        let dataRecived = try decoder.decode(ErrorHandle.self, from: jsonData)
+//                        self.present(common.makeAlert(message: dataRecived.message ?? ""), animated: true, completion: nil)
                         self.stopAnimating()
                     }
                     

@@ -44,9 +44,13 @@ class ContentViewController: common {
         return MenuButton
     }
     @objc func handleCart(_ recognizer: UIPanGestureRecognizer){
-        let storyboard = UIStoryboard(name: "Cart", bundle: nil)
-        let linkingVC = storyboard.instantiateViewController(withIdentifier: "Cart") as! UINavigationController
-        self.present(linkingVC, animated: true)
+        if CashedData.getUserApiKey() == ""{
+            openRegisteringPage(pagTitle: "login")
+        }else{
+            let storyboard = UIStoryboard(name: "Cart", bundle: nil)
+            let linkingVC = storyboard.instantiateViewController(withIdentifier: "Cart") as! UINavigationController
+            self.present(linkingVC, animated: true)
+        }
     }
     @objc func handleSetting(_ recognizer: UIPanGestureRecognizer){
         let storyboard = UIStoryboard(name: "Setting", bundle: nil)

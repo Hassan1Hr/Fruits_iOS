@@ -27,15 +27,19 @@ class Sign: common{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if isProfilEditing{
-            pageTitle.text = "تعديل المعلومات"
+        if CashedData.getUserApiKey() != ""{
+            navigationItem.title = "تعديل بياناتي"
+            pageTitle.text = "بياناتي"
             submit.setTitle("حفظ التعديلات", for: .normal)
-            PageDescription.text = "عدل معلوماتك الان"
+            PageDescription.text = "عدل بياناتك بتعبئة الحقول من جديد"
             name.text = CashedData.getUserName() ?? ""
             email.text = CashedData.getUserEmail() ?? ""
+            phone.text = CashedData.getUserPhone() ?? ""
+            isProfilEditing = true
+        }else{
+            navigationItem.title = "تسجيل عضوية"
         }
         setupAllDelegate()
-        navigationItem.title = "تسجيل عضوية"
         setupBackButtonWithDismiss()
     }
     func setupAllDelegate(){
@@ -44,29 +48,19 @@ class Sign: common{
         pass.delegate = self
         email.delegate = self
         configPass.delegate = self
+        
+        phone.isSecureTextEntry = false
+        email.isSecureTextEntry = false
+        name.isSecureTextEntry = false
+        
     }
-     // MARK:- Actions
-    
-    @IBAction func check(_ sender: UIButton) {
-        if sender.imageView?.image == #imageLiteral(resourceName: "checked") {
-            sender.setImage(#imageLiteral(resourceName: "check"), for: .normal)
-        }else{
-            sender.setImage(#imageLiteral(resourceName: "checked"), for: .normal)
-        }
-    }
-    
-    
-    @IBAction func back(_ sender: UIButton) {
-        self.navigationController?.dismiss(animated: true)
-    }
-    
      // MARK:- API
     @IBAction func sign(sender : Any){
         self.loading()
         var url = AppDelegate.LocalUrl + "signup"
         var  info = [
             "name" : name.text ?? "",
-            "phone" : name.text ?? "",
+            "phone" : phone.text ?? "",
             "email" : email.text ?? "",
             "password" : pass.text ?? "",
             "password_confirmation" : configPass.text ?? ""
@@ -77,19 +71,9 @@ class Sign: common{
         ]
         
         if isProfilEditing{
-            url = "\(AppDelegate.LocalUrl)/edit-profile"
-            info = [
-                "username" : name.text ?? "",
-                "email" : email.text ?? "",
-                "password" : CashedData.getUserPassword() ?? "",
-                "password_confirmation" : CashedData.getUserPassword() ?? "",
-                "_method" : "PUT"
-            ]
-            headers = [
-                "Accept" : "application/json",
-                "Content-Type" : "application/json",
-                "Authorization": "Bearer \(CashedData.getUserApiKey() ?? "")"
-            ]
+            url = AppDelegate.LocalUrl + "edit-profile"
+            info["_method"] = "PUT"
+            headers["Authorization"] = "Bearer \(CashedData.getUserApiKey() ?? "")"
         }
         
         AlamofireRequests.PostMethod(methodType: "POST", url: url, info: info, headers: headers){
@@ -106,14 +90,14 @@ class Sign: common{
                         CashedData.saveUserEmail(name: user?.email ?? "")
                         CashedData.saveUserPassword(name: self.pass.text ?? "")
                         CashedData.saveUserImage(name: user?.imagePath ?? "")
-                        
+                        CashedData.saveUserPhone(name: user?.phone ?? "")
                         if self.isProfilEditing == false{
                             CashedData.saveUserApiKey(token: user?.accessToken ?? "")
                             CashedData.saveUserUpdateKey(token: user?.accessToken ?? "")
+                            self.openMain()
+                        }else{
+                            self.present(common.makeAlert(message: "تم الحفظ"), animated: true, completion: nil)
                         }
-                        
-                        
-                        self.openMain()
                         self.stopAnimating()
                     }else{
                         let dataRecived = try decoder.decode(ErrorHandle.self, from: jsonData)

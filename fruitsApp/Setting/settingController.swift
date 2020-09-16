@@ -22,7 +22,6 @@ class settingController: common{
         super.viewDidLoad()
         
         navigationItem.title = "القائمة"
-        setupBackButtonWithDismiss()
         
         isLoginStack.isHidden = CashedData.getUserApiKey() == ""
         notLoginStack.isHidden = CashedData.getUserApiKey() != ""
@@ -34,6 +33,65 @@ class settingController: common{
             self.phone.text = data?.phone ?? ""
             self.aboutus.text = data?.aboutUs ?? ""
         }
+        
+    }
+    // if user is login
+    @IBAction func openTheMain(){
+        openMain()
+    }
+    @IBAction func openOrders(){
+        
+    }
+    @IBAction func openEditInfo(){
+        openRegisteringPage(pagTitle: "sign")
+    }
+    @IBAction func logout(){
+       AdminLogout(currentController: self)
+    }
+    
+    // if user is't login
+    @IBAction func openLogin(){
+        openRegisteringPage(pagTitle: "login")
+    }
+    @IBAction func openSign(){
+        openRegisteringPage(pagTitle: "sign")
+    }
+    
+    
+    // contacts
+    @IBAction func callphone(){
+        CallPhone(phone: phone.text ?? "")
+    }
+    @IBAction func callwhats(){
+        callWhats(whats: whats.text ?? "")
+    }
+    @IBAction func share(){
+        let activityController = UIActivityViewController(activityItems: [AppDelegate.stringWithLink], applicationActivities: nil)
+        activityController.completionWithItemsHandler = {(nil, completed, _, error)
+            in
+            if completed {
+                print("completed")
+            } else {
+                print("canceled")
+            }
+        }
+        if (UIDevice.current.userInterfaceIdiom == UIUserInterfaceIdiom.pad)
+        {
+            let activityVC: UIActivityViewController = UIActivityViewController(activityItems: [AppDelegate.stringWithLink], applicationActivities: nil)
+            
+            //ios > 8.0
+            if ( activityVC.responds(to: #selector(getter: UIViewController.popoverPresentationController)) ) {
+                activityVC.popoverPresentationController?.sourceView = super.view
+            }
+            self.present(activityVC, animated: true, completion: nil)
+        }
+        else{
+            present(activityController, animated: true){
+                print("presented")
+            }
+        }
+    }
+    @IBAction func contactus(){
         
     }
 }
