@@ -29,16 +29,7 @@ class common : UIViewController , NVActivityIndicatorViewable{
                                 panGestureDismissal: false)
         present(popup, animated: true, completion: nil)
     }
-    func openLoginAlert(){
-        let loginVC = loginAlert(nibName: "loginAlert", bundle: nil)
-        // Create the dialog
-        let popup = PopupDialog(viewController: loginVC,
-                                buttonAlignment: .horizontal,
-                                transitionStyle: .bounceDown,
-                                tapGestureDismissal: false,
-                                panGestureDismissal: false)
-        present(popup, animated: true, completion: nil)
-    }
+    
     func openSetting(pagTitle:String){
         let storyboard = UIStoryboard(name: "Setting", bundle: nil)
         let linkingVC = storyboard.instantiateViewController(withIdentifier: pagTitle) as! UINavigationController

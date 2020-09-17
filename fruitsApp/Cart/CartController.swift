@@ -61,7 +61,8 @@ class cartController: common {
         if let p = Double(data?.items?[sender.tag].price ?? "0"){
             data?.items?[sender.tag].totalCost =
             "\((Double(data?.items?[sender.tag].totalCost ?? "0") ?? 0.0) + p )"
-            data?.items?[sender.tag].quantity = "\((Int(data?.items?[sender.tag].quantity ?? "0") ?? 0) + 1)"
+            let quantity = (Double(data?.items?[sender.tag].quantity ?? "0") ?? 0)
+            data?.items?[sender.tag].quantity = "\((quantity ) + 1)"
             self.Editing = true
             self.cartItemCollection.reloadData()
         }
@@ -73,10 +74,14 @@ class cartController: common {
         if let p = Double(data?.items?[sender.tag].price ?? "0"){
             data?.items?[sender.tag].totalCost =
             "\((Double(data?.items?[sender.tag].totalCost ?? "0") ?? 0.0) - p )"
-            data?.items?[sender.tag].quantity = "\((Int(data?.items?[sender.tag].quantity ?? "0") ?? 0) - 1)"
+            let quantity = (Double(data?.items?[sender.tag].quantity ?? "0") ?? 0)
+            data?.items?[sender.tag].quantity = "\((quantity ) - (1))"
             self.Editing = true
             self.cartItemCollection.reloadData()
         }
+    }
+    func getStartfrom(_ index: Int)-> Double{
+        return Double(data?.items?[index].product?.weightUnits?.first(where: {$0.weightUnit == data?.items?[index].weightUnit})?.startFrom ?? "0") ?? 0.0
     }
 }
 extension cartController: UICollectionViewDelegate, UICollectionViewDataSource{
@@ -90,7 +95,7 @@ extension cartController: UICollectionViewDelegate, UICollectionViewDataSource{
         cell.image.sd_setImage(with: URL(string: data?.items?[indexPath.row].product?.imagePath ?? ""))
         cell.name.text = data?.items?[indexPath.row].product?.name ?? ""
         cell.unit.text = item?.weightUnit ?? ""
-        cell.quantity.text = item?.quantity ?? "0"
+        cell.quantity.text = "\( (Double(item?.quantity ?? "0") ?? 0.0) * getStartfrom(indexPath.row))"
         cell.price.text = item?.totalCost ?? "0"
         self.totalCosts += Double(item?.totalCost ?? "0") ?? 0.0
         cell.remove.tag = indexPath.row

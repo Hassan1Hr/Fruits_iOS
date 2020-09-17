@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import PopupDialog
 class settingController: common{
     
     @IBOutlet var whats: UILabel!
@@ -92,6 +92,13 @@ class settingController: common{
         }
     }
     @IBAction func contactus(){
-        
+            let loginVC = ContactUs(nibName: "Contactus", bundle: nil)
+            // Create the dialog
+            let popup = PopupDialog(viewController: loginVC,
+                                    buttonAlignment: .horizontal,
+                                    transitionStyle: .bounceDown,
+                                    tapGestureDismissal: false,
+                                    panGestureDismissal: false)
+            present(popup, animated: true, completion: nil)
     }
 }

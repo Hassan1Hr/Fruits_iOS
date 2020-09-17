@@ -22,6 +22,7 @@ class productDetails: ContentViewController{
     var dropDown = DropDown()
     var totalCount: Double? = 0.0
     var startFrom: Double? = 0.0
+    var priceFrom: Double? = 0.0
     var data: products? = nil
     var weight_unit_id = 0
     
@@ -37,6 +38,7 @@ class productDetails: ContentViewController{
     fileprivate func setupStartPrice(index: Int) {
         weight_unit_id = data?.weightUnits?[index].id ?? 0
         price.text = data?.weightUnits?[index].weightPrice ??  "0"
+        priceFrom = Double(price.text ?? "0")
         startFrom = Double(data?.weightUnits?[index].startFrom ?? "0")
         count.text = "\(startFrom ?? 0.0)"
         totalCount = startFrom
@@ -87,6 +89,10 @@ class productDetails: ContentViewController{
         if let p = startFrom{
             totalCount = (totalCount ?? 0.0) + p
             count.text = "\(totalCount ?? 0.0)"
+            if var totalPrice = Double(price.text ?? "0"){
+                totalPrice += priceFrom ?? 0.0
+                price.text = "\(totalPrice)"
+            }
         }
     }
     @IBAction func minus(){
@@ -94,6 +100,10 @@ class productDetails: ContentViewController{
             if let p = startFrom{
                 totalCount = (totalCount ?? 0.0) - p
                 count.text = "\(totalCount ?? 0.0)"
+                if var totalPrice = Double(price.text ?? "0"){
+                    totalPrice -= priceFrom ?? 0.0
+                    price.text = "\(totalPrice)"
+                }
             }
         }
     }
@@ -102,7 +112,7 @@ class productDetails: ContentViewController{
         if CashedData.getUserApiKey() == "" || CashedData.getUserApiKey() == nil{
             openRegisteringPage(pagTitle: "login")
         }else{
-            addToCart(productId: data?.id ?? 0, weight_unit_id: weight_unit_id, quantity: Int((totalCount ?? 0)/(startFrom ?? 0))){
+            addToCart(productId: data?.id ?? 0, weight_unit_id: weight_unit_id, quantity: Int((totalCount ?? 0)/(startFrom ?? 0.0))){
                 done in
                 self.getCartItems(id: 1)
             }

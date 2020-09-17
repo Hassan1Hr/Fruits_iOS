@@ -44,6 +44,8 @@
 		58CE8A77250E04C300B05751 /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CE8A76250E04C300B05751 /* Cart.swift */; };
 		58CE8A7A250E059800B05751 /* CartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CE8A79250E059800B05751 /* CartController.swift */; };
 		58CE8A7C250E07B400B05751 /* Cart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58CE8A7B250E07B400B05751 /* Cart.storyboard */; };
+		58DEF213251362DD00AAFF3D /* Contactus.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58DEF212251362DD00AAFF3D /* Contactus.xib */; };
+		58DEF215251364AB00AAFF3D /* ContactUs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DEF214251364AB00AAFF3D /* ContactUs.swift */; };
 		CD759EA83794BB8268C4D0C5 /* Pods_fruitsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 042522D2A3EAEB2EC0E8CD1E /* Pods_fruitsApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -88,6 +90,8 @@
 		58CE8A76250E04C300B05751 /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
 		58CE8A79250E059800B05751 /* CartController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartController.swift; sourceTree = "<group>"; };
 		58CE8A7B250E07B400B05751 /* Cart.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Cart.storyboard; sourceTree = "<group>"; };
+		58DEF212251362DD00AAFF3D /* Contactus.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Contactus.xib; sourceTree = "<group>"; };
+		58DEF214251364AB00AAFF3D /* ContactUs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactUs.swift; sourceTree = "<group>"; };
 		AE8A3119182FD7D0FB950438 /* Pods-fruitsApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fruitsApp.debug.xcconfig"; path = "Target Support Files/Pods-fruitsApp/Pods-fruitsApp.debug.xcconfig"; sourceTree = "<group>"; };
 		C8DC753F23517D4142F061B9 /* Pods-fruitsApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fruitsApp.release.xcconfig"; path = "Target Support Files/Pods-fruitsApp/Pods-fruitsApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -147,6 +151,7 @@
 		58740EF12510A77E0046A2C3 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
+				58DEF211251362BD00AAFF3D /* Contactus */,
 				58740EF22510A7950046A2C3 /* Setting.storyboard */,
 				58740EF42510A7AB0046A2C3 /* settingController.swift */,
 			);
@@ -263,6 +268,15 @@
 			path = Cart;
 			sourceTree = "<group>";
 		};
+		58DEF211251362BD00AAFF3D /* Contactus */ = {
+			isa = PBXGroup;
+			children = (
+				58DEF212251362DD00AAFF3D /* Contactus.xib */,
+				58DEF214251364AB00AAFF3D /* ContactUs.swift */,
+			);
+			path = Contactus;
+			sourceTree = "<group>";
+		};
 		A11537FAFCAD705101AAC4A3 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -347,6 +361,7 @@
 				58B366F9250BF4BD00B975C0 /* GoogleService-Info.plist in Resources */,
 				5842653724F2C4DA003DDE22 /* Assets.xcassets in Resources */,
 				587EDBBF250CA9BB00B5BA35 /* Registeration.storyboard in Resources */,
+				58DEF213251362DD00AAFF3D /* Contactus.xib in Resources */,
 				58B366FF250BF4BD00B975C0 /* DroidNaskh-Bold.ttf in Resources */,
 				58B366FB250BF4BD00B975C0 /* productDetails.xib in Resources */,
 				58CE8A7C250E07B400B05751 /* Cart.storyboard in Resources */,
@@ -438,6 +453,7 @@
 				587EDBC6250CB03D00B5BA35 /* forgetPass.swift in Sources */,
 				58B366FC250BF4BD00B975C0 /* loginAlert.swift in Sources */,
 				587EDBC7250CB03D00B5BA35 /* resetPass.swift in Sources */,
+				58DEF215251364AB00AAFF3D /* ContactUs.swift in Sources */,
 				585F9149250E2A0200EFD0FC /* ContentViewController.swift in Sources */,
 				58B366F1250BF4BD00B975C0 /* home.swift in Sources */,
 				58B366F0250BF4BD00B975C0 /* categoryCell.swift in Sources */,
