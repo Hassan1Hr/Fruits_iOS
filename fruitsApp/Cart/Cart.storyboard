@@ -333,6 +333,7 @@
                                                     <constraint firstAttribute="width" constant="150" id="DLu-YU-XSF"/>
                                                     <constraint firstAttribute="height" constant="40" id="fz2-ce-O67"/>
                                                 </constraints>
+                                                <fontDescription key="fontDescription" name="DroidArabicNaskh-Bold" family="Droid Arabic Naskh" pointSize="16"/>
                                                 <state key="normal" title="الشراء">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>

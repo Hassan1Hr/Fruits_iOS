@@ -222,8 +222,6 @@ extension common{
                         completionHandler(dataReceived.data ?? nil)
                         self.stopAnimating()
                     }else{
-//                        let dataRecived = try decoder.decode(ErrorHandle.self, from: jsonData)
-//                        self.present(common.makeAlert(message: dataRecived.message ?? ""), animated: true, completion: nil)
                         self.stopAnimating()
                     }
                     
