@@ -10,6 +10,7 @@ import UIKit
 import IQKeyboardManagerSwift
 import GoogleMaps
 import GooglePlaces
+import Firebase
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -22,8 +23,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
     
         IQKeyboardManager.shared.enable = true
-        GMSServices.provideAPIKey("AIzaSyCeVS0B0F_DQrX7TBYO-mB28c1GeS83ccs")
-    GMSPlacesClient.provideAPIKey("AIzaSyCeVS0B0F_DQrX7TBYO-mB28c1GeS83ccs")
+        GMSServices.provideAPIKey("AIzaSyCH41pwRsQKTf9IXYWxzbMA1V6cHHsmmZM")
+    GMSPlacesClient.provideAPIKey("AIzaSyCH41pwRsQKTf9IXYWxzbMA1V6cHHsmmZM")
+        FirebaseApp.configure()
         return true
     }
 

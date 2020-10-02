@@ -91,6 +91,7 @@ extension cartController: UICollectionViewDelegate, UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cart", for: indexPath) as! cartItemCell
+        
         let item = data?.items?[indexPath.row]
         cell.image.sd_setImage(with: URL(string: data?.items?[indexPath.row].product?.imagePath ?? ""))
         cell.name.text = data?.items?[indexPath.row].product?.name ?? ""

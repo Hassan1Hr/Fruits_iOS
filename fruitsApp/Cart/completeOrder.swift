@@ -28,6 +28,7 @@ class completeOrder: common , CLLocationManagerDelegate{
     var selectedPlace: GMSPlace?
     var long:Double?
     var lat:Double?
+    
     var cartID: Int?
     var promoCode: String?
     var availableId: Int?
@@ -44,14 +45,14 @@ class completeOrder: common , CLLocationManagerDelegate{
         super.viewDidLoad()
         
         
-     /*   locationManager.delegate = self
+        mapView.delegate = self
+        locationManager.delegate = self
         // add button to current location
         self.locationManager.startUpdatingLocation()
         mapView.isMyLocationEnabled = true
         mapView.settings.myLocationButton = true
         mapView.padding = UIEdgeInsets(top: 0, left: 0, bottom: 20, right: 20)
-        mapView.delegate = self
- */
+ 
         time.delegate = self
         showDatePicker()
         getAvailableTimes()

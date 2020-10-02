@@ -2,6 +2,18 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>FirebaseScreenReportingEnabled</key>
+	<false/>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>For a better experience, turn on device location to help you get you destination</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription - 2</key>
+	<string>For a better experience, turn on device location to help you get you destination</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>For a better experience, turn on device location to help you get you destination</string>
+	<key>NSLocationUsageDescription</key>
+	<string>For a better experience, turn on device location to help you get you destination</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>For a better experience, turn on device location to help you get you destination</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
