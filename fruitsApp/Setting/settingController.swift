@@ -40,7 +40,7 @@ class settingController: common{
         openMain()
     }
     @IBAction func openOrders(){
-        
+        openSetting(pagTitle: "myOrders")
     }
     @IBAction func openEditInfo(){
         openRegisteringPage(pagTitle: "sign")

@@ -17,6 +17,8 @@ class myOrders: common {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.title = "طلباتي"
+        setupBackButtonWithDismiss()
         getOrders()
     }
     func getOrders(){
@@ -69,9 +71,9 @@ extension myOrders: UICollectionViewDelegate,UICollectionViewDataSource{
         cell.number.text = "\(data.id ?? 0)"
         cell.date.text = data.createdAt ?? ""
         cell.cost.text = data.totalCost ?? "0"
-        
+        if data.status ?? "" != "preview"{
+            cell.status = data.status ?? ""
+        }
         return cell
     }
-    
-    
 }

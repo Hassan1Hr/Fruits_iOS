@@ -86,6 +86,11 @@ class cartController: common {
 }
 extension cartController: UICollectionViewDelegate, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        collectionView.backgroundView = nil
+        if data?.items?.count ?? 0 == 0{
+            self.totalCostLabel.text = "0.0"
+            noDataAvailable(collectionView)
+        }
         return data?.items?.count ?? 0
     }
     

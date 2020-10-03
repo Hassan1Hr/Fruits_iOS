@@ -78,6 +78,10 @@ extension home: UICollectionViewDataSource,UICollectionViewDelegate , UICollecti
         if collectionView == categoryCollection{
             return categories.count
         }else{
+            collectionView.backgroundView = nil
+            if productsArr.count == 0{
+                noDataAvailable(collectionView)
+            }
             return productsArr.count
         }
         
@@ -124,7 +128,6 @@ extension home: UICollectionViewDataSource,UICollectionViewDelegate , UICollecti
             openProductDetails(data: self.productsArr[indexPath.row])
         }
     }
-    
 }
 
 // MARK:- Alamofire

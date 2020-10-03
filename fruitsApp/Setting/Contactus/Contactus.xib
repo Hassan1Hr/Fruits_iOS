@@ -100,7 +100,7 @@
                                                         <constraint firstAttribute="height" constant="55" id="GMz-zd-W0d"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="DroidArabicNaskh-Bold" family="Droid Arabic Naskh" pointSize="16"/>
-                                                    <state key="normal" title="تسجيل">
+                                                    <state key="normal" title="ارسال">
                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
                                                     <userDefinedRuntimeAttributes>
