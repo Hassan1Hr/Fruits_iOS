@@ -29,6 +29,8 @@ class completeOrder: common , CLLocationManagerDelegate{
     var long:Double?
     var lat:Double?
     
+    
+    
     var cartID: Int?
     var promoCode: String?
     var availableId: Int?

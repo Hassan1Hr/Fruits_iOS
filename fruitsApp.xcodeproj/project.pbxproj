@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		582E8C172529B87100A9AF12 /* promoCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582E8C162529B87100A9AF12 /* promoCode.swift */; };
 		5842653724F2C4DA003DDE22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5842653624F2C4DA003DDE22 /* Assets.xcassets */; };
 		5842653A24F2C4DA003DDE22 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5842653824F2C4DA003DDE22 /* LaunchScreen.storyboard */; };
 		5842B1AE251A0D530010674D /* completeOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5842B1AD251A0D530010674D /* completeOrder.swift */; };
@@ -22,6 +23,7 @@
 		587EDBC7250CB03D00B5BA35 /* resetPass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587EDBC3250CB03D00B5BA35 /* resetPass.swift */; };
 		587EDBC9250CB3C100B5BA35 /* signUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587EDBC8250CB3C100B5BA35 /* signUp.swift */; };
 		58841189251DC65700C84FD0 /* comp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58841188251DC65700C84FD0 /* comp.swift */; };
+		58853486252C3D3F00948727 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58853485252C3D3F00948727 /* GoogleService-Info.plist */; };
 		588F89F92526DDE900BDD11F /* myOrders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588F89F82526DDE900BDD11F /* myOrders.swift */; };
 		588F89FB2526EE1E00BDD11F /* myOrdersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588F89FA2526EE1E00BDD11F /* myOrdersCell.swift */; };
 		5894D9E8250EBC310097ABA3 /* config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5894D9E7250EBC310097ABA3 /* config.swift */; };
@@ -48,7 +50,6 @@
 		58CE8A77250E04C300B05751 /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CE8A76250E04C300B05751 /* Cart.swift */; };
 		58CE8A7A250E059800B05751 /* CartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CE8A79250E059800B05751 /* CartController.swift */; };
 		58CE8A7C250E07B400B05751 /* Cart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58CE8A7B250E07B400B05751 /* Cart.storyboard */; };
-		58D78C3A251D1AA0005D4C12 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58D78C39251D1A9F005D4C12 /* GoogleService-Info.plist */; };
 		58DEF213251362DD00AAFF3D /* Contactus.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58DEF212251362DD00AAFF3D /* Contactus.xib */; };
 		58DEF215251364AB00AAFF3D /* ContactUs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DEF214251364AB00AAFF3D /* ContactUs.swift */; };
 		58ED4667251A36E900B364D9 /* availableTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58ED4666251A36E900B364D9 /* availableTime.swift */; };
@@ -57,6 +58,7 @@
 
 /* Begin PBXFileReference section */
 		042522D2A3EAEB2EC0E8CD1E /* Pods_fruitsApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_fruitsApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		582E8C162529B87100A9AF12 /* promoCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = promoCode.swift; sourceTree = "<group>"; };
 		5842652C24F2C4D8003DDE22 /* fruitsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fruitsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5842653624F2C4DA003DDE22 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5842653924F2C4DA003DDE22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 		587EDBC3250CB03D00B5BA35 /* resetPass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = resetPass.swift; sourceTree = "<group>"; };
 		587EDBC8250CB3C100B5BA35 /* signUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signUp.swift; sourceTree = "<group>"; };
 		58841188251DC65700C84FD0 /* comp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = comp.swift; sourceTree = "<group>"; };
+		58853485252C3D3F00948727 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		588F89F82526DDE900BDD11F /* myOrders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myOrders.swift; sourceTree = "<group>"; };
 		588F89FA2526EE1E00BDD11F /* myOrdersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myOrdersCell.swift; sourceTree = "<group>"; };
 		5894D9E7250EBC310097ABA3 /* config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = config.swift; sourceTree = "<group>"; };
@@ -100,7 +103,6 @@
 		58CE8A76250E04C300B05751 /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
 		58CE8A79250E059800B05751 /* CartController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartController.swift; sourceTree = "<group>"; };
 		58CE8A7B250E07B400B05751 /* Cart.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Cart.storyboard; sourceTree = "<group>"; };
-		58D78C39251D1A9F005D4C12 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		58DEF212251362DD00AAFF3D /* Contactus.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Contactus.xib; sourceTree = "<group>"; };
 		58DEF214251364AB00AAFF3D /* ContactUs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactUs.swift; sourceTree = "<group>"; };
 		58ED4666251A36E900B364D9 /* availableTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = availableTime.swift; sourceTree = "<group>"; };
@@ -155,7 +157,7 @@
 				5842653824F2C4DA003DDE22 /* LaunchScreen.storyboard */,
 				5842653624F2C4DA003DDE22 /* Assets.xcassets */,
 				5842653B24F2C4DA003DDE22 /* Info.plist */,
-				58D78C39251D1A9F005D4C12 /* GoogleService-Info.plist */,
+				58853485252C3D3F00948727 /* GoogleService-Info.plist */,
 			);
 			path = fruitsApp;
 			sourceTree = "<group>";
@@ -202,6 +204,7 @@
 				5894D9E7250EBC310097ABA3 /* config.swift */,
 				58ED4666251A36E900B364D9 /* availableTime.swift */,
 				58721112251C8A8C00069897 /* orders.swift */,
+				582E8C162529B87100A9AF12 /* promoCode.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -385,9 +388,9 @@
 				5842653A24F2C4DA003DDE22 /* LaunchScreen.storyboard in Resources */,
 				58B36700250BF4BD00B975C0 /* DroidNaskh-Regular.ttf in Resources */,
 				5842653724F2C4DA003DDE22 /* Assets.xcassets in Resources */,
+				58853486252C3D3F00948727 /* GoogleService-Info.plist in Resources */,
 				587EDBBF250CA9BB00B5BA35 /* Registeration.storyboard in Resources */,
 				58DEF213251362DD00AAFF3D /* Contactus.xib in Resources */,
-				58D78C3A251D1AA0005D4C12 /* GoogleService-Info.plist in Resources */,
 				58B366FF250BF4BD00B975C0 /* DroidNaskh-Bold.ttf in Resources */,
 				58B366FB250BF4BD00B975C0 /* productDetails.xib in Resources */,
 				58CE8A7C250E07B400B05751 /* Cart.storyboard in Resources */,
@@ -468,6 +471,7 @@
 				5842B1AE251A0D530010674D /* completeOrder.swift in Sources */,
 				58B366EF250BF4BD00B975C0 /* Product.swift in Sources */,
 				58B36702250BF4BD00B975C0 /* VerticalStackView.swift in Sources */,
+				582E8C172529B87100A9AF12 /* promoCode.swift in Sources */,
 				587EDBC9250CB3C100B5BA35 /* signUp.swift in Sources */,
 				58B366F2250BF4BD00B975C0 /* productCell.swift in Sources */,
 				58B366F4250BF4BD00B975C0 /* AppDelegate.swift in Sources */,

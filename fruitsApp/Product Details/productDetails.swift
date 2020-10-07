@@ -23,7 +23,7 @@ class productDetails: ContentViewController{
     var totalCount: Double? = 0.0
     var startFrom: Double? = 0.0
     var priceFrom: Double? = 0.0
-    var data: products? = nil
+    var data: product? = nil
     var weight_unit_id = 0
     
     override func viewDidLoad() {

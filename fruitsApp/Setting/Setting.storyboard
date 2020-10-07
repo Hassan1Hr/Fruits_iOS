@@ -968,6 +968,9 @@
                                                     <state key="normal" title="الفاتورة">
                                                         <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="sendReceiptWithSender:" destination="gFx-Ez-08H" eventType="touchUpInside" id="JPI-Ea-YlI"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </view>
@@ -1027,6 +1030,7 @@
                         <color key="barTintColor" name="yellow"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="DroidArabicNaskh-Bold" family="Droid Arabic Naskh" pointSize="16"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>

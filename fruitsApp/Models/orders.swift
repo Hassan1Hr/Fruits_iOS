@@ -66,3 +66,14 @@ class orderData: Codable {
         self.createdAt = createdAt
     }
 }
+
+class receipt: Codable{
+    internal init(code: Int?, message: String?) {
+        self.code = code
+        self.message = message
+    }
+    
+    let code: Int?
+    let message: String?
+    
+}

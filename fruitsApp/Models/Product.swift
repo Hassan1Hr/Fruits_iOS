@@ -9,12 +9,12 @@
 import Foundation
 
 // MARK: - Welcome
-class product: Codable {
+class productsJson: Codable {
     let code: Int?
     let message: String?
-    let data: dataChild?
+    let data: products?
     
-    init(code: Int?, message: String?, data: dataChild?) {
+    init(code: Int?, message: String?, data: products?) {
         self.code = code
         self.message = message
         self.data = data
@@ -22,9 +22,9 @@ class product: Codable {
 }
 
 // MARK: - DataClass
-class dataChild: Codable {
+class products: Codable {
     let currentPage: Int?
-    let data: [products]?
+    var data: [product]?
     let firstPageURL: String?
     let from, lastPage: Int?
     let lastPageURL: String?
@@ -48,7 +48,7 @@ class dataChild: Codable {
         case to, total
     }
     
-    init(currentPage: Int?, data: [products]?, firstPageURL: String?, from: Int?, lastPage: Int?, lastPageURL: String?, nextPageURL: String?, path: String?, perPage: Int?, prevPageURL: String?, to: Int?, total: Int?) {
+    init(currentPage: Int?, data: [product]?, firstPageURL: String?, from: Int?, lastPage: Int?, lastPageURL: String?, nextPageURL: String?, path: String?, perPage: Int?, prevPageURL: String?, to: Int?, total: Int?) {
         self.currentPage = currentPage
         self.data = data
         self.firstPageURL = firstPageURL
@@ -65,7 +65,7 @@ class dataChild: Codable {
 }
 
 // MARK: - Datum
-class products: Codable {
+class product: Codable {
     let id: Int?
     let name, datumDescription: String?
     let imagePath: String?

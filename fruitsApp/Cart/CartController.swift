@@ -14,8 +14,11 @@ class cartController: common {
     @IBOutlet var cartItemCollection: UICollectionView!
     @IBOutlet var totalCostLabel: UILabel!
     @IBOutlet var shipping: UILabel!
+    @IBOutlet var promoValue: UILabel!
+    @IBOutlet var promo: UITextField!
     
     var data: cartData?
+    var promoText = ""
     var totalCosts:Double = 0.0
     var Editing = false
     var isBack = false
@@ -27,13 +30,15 @@ class cartController: common {
         getConfig{
             data in
             self.shipping.text = (data?.shippingValue ?? "0").replacingOccurrences(of: ".00", with: "")
+            
+            self.getCartItems{
+                data in
+                self.data = data
+                self.totalCostLabel.text = data?.totalCost ?? "0"
+                self.cartItemCollection.reloadData()
+            }
         }
-        getCartItems{
-            data in
-            self.data = data
-            self.totalCostLabel.text = data?.totalCost ?? "0"
-            self.cartItemCollection.reloadData()
-        }
+       
         
     }
     override func setupBackButtonWithDismiss() {
@@ -51,7 +56,9 @@ class cartController: common {
         self.saveCartItemsAfterEditing()
     }
     fileprivate func updateTotalCost(){
-        totalCostLabel.text = "\(totalCosts + (Double(shipping.text ?? "0.0") ?? 0.0))"
+        totalCosts = (totalCosts + (Double(shipping.text ?? "0.0") ?? 0.0)) - (Double(promoValue.text ?? "0.0") ?? 0.0)
+        totalCosts = max(0.0, totalCosts)
+        totalCostLabel.text = "\(totalCosts)"
         totalCosts = 0.0
     }
     @IBAction func deleteItem(sender: UIButton){
@@ -160,7 +167,6 @@ extension cartController{
         if Editing == false{
             return
         }
-    
         self.loading()
         let url = AppDelegate.LocalUrl + "edit-cart-item"
         let headers = [
@@ -193,6 +199,40 @@ extension cartController{
                         self.stopAnimating()
                     }
                     
+                }else{
+                    let dataRecived = try decoder.decode(ErrorHandle.self, from: jsonData)
+                    self.present(common.makeAlert(message: dataRecived.message ?? ""), animated: true, completion: nil)
+                    self.stopAnimating()
+                }
+            }catch {
+                self.present(common.makeAlert(), animated: true, completion: nil)
+                self.stopAnimating()
+            }
+        }
+    }
+    
+    @IBAction func getPromoCode(){
+        self.loading()
+        let url = AppDelegate.LocalUrl + "get-code/\(promo.text ?? "")"
+        let headers = [
+            "Content-Type": "application/json" ,
+            "Accept" : "application/json"
+        ]
+        AlamofireRequests.getMethod(url: url, headers: headers){
+            (error, success, jsonData) in
+            do {
+                let decoder = JSONDecoder()
+                if error == nil {
+                    if success{
+                        let dataRecived = try decoder.decode(promoCode.self, from: jsonData)
+                        self.promoText = dataRecived.data?.code ?? ""
+                        self.promoValue.text = dataRecived.data?.value ?? "0"
+                        self.cartItemCollection.reloadData()
+                        self.stopAnimating()
+                    }else{
+                        self.present(common.makeAlert(message: "كود خصم غير صحيح"), animated: true, completion: nil)
+                        self.stopAnimating()
+                    }
                 }else{
                     let dataRecived = try decoder.decode(ErrorHandle.self, from: jsonData)
                     self.present(common.makeAlert(message: dataRecived.message ?? ""), animated: true, completion: nil)

@@ -42,7 +42,7 @@ class AlamofireRequests {
         let headers = headers
         var request = URLRequest(url: urlComponent.url!)
         request.httpMethod = methodType
-        request.timeoutInterval = 10
+        request.timeoutInterval = 15
         request.httpBody = try? JSONSerialization.data(withJSONObject: parameters)
         request.allHTTPHeaderFields = headers
         Alamofire.request(request).responseData { (response) in

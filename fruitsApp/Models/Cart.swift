@@ -43,7 +43,7 @@ class cartData: Codable {
 class Item: Codable {
     let id: Int?
     var weightUnit, price, quantity, totalCost: String?
-    let product: products?
+    let product: product?
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -53,7 +53,7 @@ class Item: Codable {
         case product
     }
     
-    init(id: Int?, weightUnit: String?, price: String?, quantity: String?, totalCost: String?, product: products?) {
+    init(id: Int?, weightUnit: String?, price: String?, quantity: String?, totalCost: String?, product: product?) {
         self.id = id
         self.weightUnit = weightUnit
         self.price = price

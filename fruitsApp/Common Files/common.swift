@@ -18,7 +18,7 @@ class common : UIViewController , NVActivityIndicatorViewable{
         return notifBtn
         // Do any additional setup after loading the view
     }
-    func openProductDetails(data: products){
+    func openProductDetails(data: product){
         let loginVC = productDetails(nibName: "productDetails", bundle: nil)
         loginVC.data = data
         // Create the dialog

@@ -29,7 +29,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:728953427846:ios:51180263ad09dc44e9be07</string>
+	<string>1:728953427846:ios:e87812ecf2bd5035e9be07</string>
 	<key>DATABASE_URL</key>
 	<string>https://fruitsapp-76ca7.firebaseio.com</string>
 </dict>

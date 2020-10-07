@@ -10,14 +10,13 @@ import UIKit
 
 class home: ContentViewController {
     var categories = [categoryData]()
-    var productsArr = [products]()
+    var products : products?
     var categorySelected = 0
     @IBOutlet var categoryCollection: UICollectionView!
     @IBOutlet var productCollection: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+
         getCategories()
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -59,8 +58,8 @@ class home: ContentViewController {
         if CashedData.getUserApiKey() == "" || CashedData.getUserApiKey() == nil{
             openRegisteringPage(pagTitle: "login")
         }else{
-            if productsArr[sender.tag].weightUnits?.count ?? 0 > 0{
-                addToCart(productId: productsArr[sender.tag].id ?? 0, weight_unit_id: productsArr[sender.tag].weightUnits?[0].id ?? 0, quantity: 1){
+            if products?.data?[sender.tag].weightUnits?.count ?? 0 > 0{
+                addToCart(productId: products?.data?[sender.tag].id ?? 0, weight_unit_id: products?.data?[sender.tag].weightUnits?[0].id ?? 0, quantity: 1){
                     done in
                     self.getCartItems(id: 1)
                 }
@@ -79,10 +78,10 @@ extension home: UICollectionViewDataSource,UICollectionViewDelegate , UICollecti
             return categories.count
         }else{
             collectionView.backgroundView = nil
-            if productsArr.count == 0{
+            if products?.data?.count == 0{
                 noDataAvailable(collectionView)
             }
-            return productsArr.count
+            return products?.data?.count ?? 0
         }
         
     }
@@ -111,21 +110,25 @@ extension home: UICollectionViewDataSource,UICollectionViewDelegate , UICollecti
         }else{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "products", for: indexPath) as! productCell
             cell.productCart.tag = indexPath.row
-            cell.productName.text = productsArr[indexPath.row].name ?? ""
-            if productsArr[indexPath.row].weightUnits?.count ?? 0 > 0{
-                cell.productPrice.text = "\(productsArr[indexPath.row].weightUnits?[0].weightPrice ?? "0")"
+            cell.productName.text = products?.data?[indexPath.row].name ?? ""
+            if products?.data?[indexPath.row].weightUnits?.count ?? 0 > 0{
+                cell.productPrice.text = "\(products?.data?[indexPath.row].weightUnits?[0].weightPrice ?? "0")"
             }
-            cell.productImage.sd_setImage(with: URL(string: productsArr[indexPath.row].imagePath ?? ""))
+            cell.productImage.sd_setImage(with: URL(string: products?.data?[indexPath.row].imagePath ?? ""))
             
+            if indexPath.row + 1 == products?.data?.count &&
+                (products?.to ?? 0) != (products?.total ?? 0){
+                self.getProducts(categoryId: self.categories[indexPath.row].id ?? 0, pageNumber: (products?.lastPage ?? 0) + 1, removeIt: false)
+            }
             return cell
         }
         
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == categoryCollection{
-            self.getProducts(categoryId: self.categories[indexPath.row].id ?? 0)
+            self.getProducts(categoryId: self.categories[indexPath.row].id ?? 0, pageNumber: 1, removeIt: true)
         }else{
-            openProductDetails(data: self.productsArr[indexPath.row])
+            openProductDetails(data: (self.products?.data?[indexPath.row])!)
         }
     }
 }
@@ -150,7 +153,7 @@ extension home {
                         self.categoryCollection.reloadData()
                         self.stopAnimating()
                         if self.categories.count > 0{
-                            self.getProducts(categoryId: self.categories[0].id ?? 0)
+                            self.getProducts(categoryId: self.categories[0].id ?? 0, pageNumber: 1, removeIt: true)
                         }
                     }else{
                         self.present(common.makeAlert(), animated: true, completion: nil)
@@ -169,12 +172,12 @@ extension home {
         }
     }
     
-    func getProducts(categoryId: Int){
+    func getProducts(categoryId: Int,pageNumber: Int,removeIt: Bool){
         self.loading()
-        let url = AppDelegate.LocalUrl + "products"
+        let url = AppDelegate.LocalUrl + "products?page=\(pageNumber)"
         let headers = [
             "Content-Type": "application/json" ,
-            "Accept" : "application/json",
+            "Accept" : "application/json"
         ]
         let info = [
             "category_id": categoryId
@@ -185,10 +188,14 @@ extension home {
                 let decoder = JSONDecoder()
                 if error == nil {
                     if success {
-                        let dataReceived = try decoder.decode(product.self, from: jsonData)
+                        let dataReceived = try decoder.decode(productsJson.self, from: jsonData)
+                        
+                        if removeIt{
+                            self.products = dataReceived.data
+                        }else{
+                            self.products?.data?.append(contentsOf: dataReceived.data?.data ?? [])
+                        }
                         self.categorySelected = categoryId
-                        self.productsArr.removeAll()
-                        self.productsArr.append(contentsOf: dataReceived.data?.data ?? [])
                         self.categoryCollection.reloadData()
                         self.productCollection.reloadData()
                         self.stopAnimating()

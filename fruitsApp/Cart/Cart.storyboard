@@ -277,6 +277,9 @@
                                                                             <constraint firstAttribute="width" constant="30" id="NMU-XZ-WsF"/>
                                                                         </constraints>
                                                                         <state key="normal" image="ic_arrow"/>
+                                                                        <connections>
+                                                                            <action selector="getPromoCode" destination="5nr-bV-U93" eventType="touchUpInside" id="PpH-by-zLp"/>
+                                                                        </connections>
                                                                     </button>
                                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="أدخل كود الخصم" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X3o-hO-gUE" customClass="TextFieldShadow" customModule="fruitsApp" customModuleProvider="target">
                                                                         <rect key="frame" x="30" y="0.0" width="135" height="30"/>
@@ -386,6 +389,8 @@
                     <navigationItem key="navigationItem" id="Jim-ew-LK0"/>
                     <connections>
                         <outlet property="cartItemCollection" destination="gGl-Ab-jaG" id="DgP-p6-ikW"/>
+                        <outlet property="promo" destination="X3o-hO-gUE" id="sTw-cg-A1u"/>
+                        <outlet property="promoValue" destination="ipb-xI-lce" id="heE-dX-lgt"/>
                         <outlet property="shipping" destination="h6d-Vc-w5P" id="sPi-Nf-xAn"/>
                         <outlet property="totalCostLabel" destination="fYU-e9-O4H" id="rAw-f1-Vt5"/>
                     </connections>
