@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="DroidNaskh-Bold.ttf">
+            <string>DroidArabicNaskh-Bold</string>
+        </array>
+        <array key="DroidNaskh-Regular.ttf">
+            <string>DroidArabicNaskh</string>
+        </array>
+        <array key="SefidUI-700-Bold.ttf">
+            <string>SefidUI-Bold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--common-->
+        <scene sceneID="INY-Vn-WBS">
+            <objects>
+                <viewController title="common" id="AoY-XW-2qh" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pWK-qf-9bw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dE1-1q-Nce">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ceR-jK-ERz">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="ceR-jK-ERz" secondAttribute="bottom" id="1AQ-xQ-Jke"/>
+                                    <constraint firstAttribute="trailing" secondItem="ceR-jK-ERz" secondAttribute="trailing" id="9lt-7R-4Wh"/>
+                                    <constraint firstItem="ceR-jK-ERz" firstAttribute="leading" secondItem="dE1-1q-Nce" secondAttribute="leading" id="Jf6-GX-tM3"/>
+                                    <constraint firstItem="ceR-jK-ERz" firstAttribute="top" secondItem="dE1-1q-Nce" secondAttribute="top" id="dtA-Qu-3ao"/>
+                                    <constraint firstItem="ceR-jK-ERz" firstAttribute="width" secondItem="dE1-1q-Nce" secondAttribute="width" id="nhK-i5-WkK"/>
+                                    <constraint firstItem="ceR-jK-ERz" firstAttribute="height" secondItem="dE1-1q-Nce" secondAttribute="height" id="pgs-ur-eTU"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="pso-Nu-0qg" firstAttribute="bottom" secondItem="dE1-1q-Nce" secondAttribute="bottom" id="9Jr-1R-TiD"/>
+                            <constraint firstItem="dE1-1q-Nce" firstAttribute="top" secondItem="pso-Nu-0qg" secondAttribute="top" id="I0t-2l-fhH"/>
+                            <constraint firstItem="dE1-1q-Nce" firstAttribute="leading" secondItem="pso-Nu-0qg" secondAttribute="leading" id="Tcm-pF-GVu"/>
+                            <constraint firstItem="pso-Nu-0qg" firstAttribute="trailing" secondItem="dE1-1q-Nce" secondAttribute="trailing" id="tHr-9n-xtM"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="pso-Nu-0qg"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="81A-eo-xtE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-822" y="82"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="fruitsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="coV-me-C9D">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qfa-Sb-LGI">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="521"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="cxo-wc-x2l">
+                                                <rect key="frame" x="20" y="50" width="374" height="471"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="K2W-oT-ET4">
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="69"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="أهلا بعودتك  (:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VsN-Mv-aMw">
+                                                                <rect key="frame" x="0.0" y="0.0" width="374" height="36.5"/>
+                                                                <fontDescription key="fontDescription" name="DroidArabicNaskh-Bold" family="Droid Arabic Naskh" pointSize="19"/>
+                                                                <color key="textColor" name="Walnut"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="سجل دخولك وتابع مشترياتك بكل سهولة" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LpS-8b-3y2">
+                                                                <rect key="frame" x="0.0" y="36.5" width="374" height="32.5"/>
+                                                                <fontDescription key="fontDescription" name="DroidArabicNaskh" family="Droid Arabic Naskh" pointSize="17"/>
+                                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KkZ-yG-xix" customClass="ViewShadow" customModule="fruitsApp" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="69" width="374" height="402"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="YVG-M3-bJj">
+                                                                <rect key="frame" x="15" y="25" width="344" height="352"/>
+                                                                <subviews>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="UiX-Uc-L0s">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="344" height="86"/>
+                                                                        <subviews>
+                                                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="hgj-Mh-slX">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="344" height="75"/>
+                                                                                <subviews>
+                                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="X83-Vu-Zps">
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="344" height="75"/>
+                                                                                        <subviews>
+                                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="رقم الجوال" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="H0p-0V-2Ai">
+                                                                                                <rect key="frame" x="0.0" y="0.0" width="344" height="35"/>
+                                                                                                <fontDescription key="fontDescription" name="DroidArabicNaskh-Bold" family="Droid Arabic Naskh" pointSize="16"/>
+                                                                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                                                <nil key="highlightedColor"/>
+                                                                                                <variation key="heightClass=regular-widthClass=regular">
+                                                                                                    <fontDescription key="fontDescription" name="DroidArabicNaskh-Bold" family="Droid Arabic Naskh" pointSize="20"/>
+                                                                                                </variation>
+                                                                                            </label>
+                                                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="user" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xpq-Tm-6Fg">
+                                                                                                <rect key="frame" x="0.0" y="40" width="344" height="35"/>
+                                                                                                <constraints>
+                                                                                                    <constraint firstAttribute="height" constant="35" id="k9W-Bw-ZRA"/>
+                                                                                                </constraints>
+                                                                                                <nil key="textColor"/>
+                                                                                                <fontDescription key="fontDescription" name="DroidArabicNaskh-Bold" family="Droid Arabic Naskh" pointSize="16"/>
+                                                                                                <textInputTraits key="textInputTraits" keyboardAppearance="alert"/>
+                                                                                            </textField>
+                                                                                        </subviews>
+                                                                                    </stackView>
+                                                                                </subviews>
+                                                                            </stackView>
+                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aHa-xp-E3C">
+                                                                                <rect key="frame" x="0.0" y="85" width="344" height="1"/>
+                                                                                <subviews>
+                                                                                    <view contentMode="scaleToFill" horizontalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2cf-3A-uXT">
+                                                                                        <rect key="frame" x="10" y="0.0" width="334" height="1"/>
+                                                                                        <color key="backgroundColor" name="dark Magenta"/>
+                                                                                    </view>
+                                                                                </subviews>
+                                                                                <constraints>
+                                                                                    <constraint firstItem="2cf-3A-uXT" firstAttribute="leading" secondItem="aHa-xp-E3C" secondAttribute="leading" constant="10" id="2wx-r4-6Dc"/>
+                                                                                    <constraint firstAttribute="bottom" secondItem="2cf-3A-uXT" secondAttribute="bottom" id="6XQ-Fe-olV"/>
+                                                                                    <constraint firstItem="2cf-3A-uXT" firstAttribute="top" secondItem="aHa-xp-E3C" secondAttribute="top" id="Lir-7F-sLN"/>
+                                                                                    <constraint firstAttribute="height" constant="1" id="onn-t2-RQR"/>
+                                                                                </constraints>
+                                                                            </view>
+                                                                        </subviews>
+                                                                        <constraints>
+                                                                            <constraint firstItem="2cf-3A-uXT" firstAttribute="trailing" secondItem="X83-Vu-Zps" secondAttribute="trailing" id="JrU-6Y-KoX"/>
+                                                                        </constraints>
+                                                                    </stackView>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="OUu-zf-GZb">
+                                                                        <rect key="frame" x="0.0" y="101" width="344" height="86"/>
+                                                                        <subviews>
+                                                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="gZQ-U7-QsO">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="344" height="75"/>
+                                                                                <subviews>
+                                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="M3M-Jq-8Ct">
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="344" height="75"/>
+                                                                                        <subviews>
+                                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="كلمة المرور" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="kgY-iD-w8q">
+                                                                                                <rect key="frame" x="0.0" y="0.0" width="344" height="35"/>
+                                                                                                <fontDescription key="fontDescription" name="DroidArabicNaskh-Bold" family="Droid Arabic Naskh" pointSize="16"/>
+                                                                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                                                <nil key="highlightedColor"/>
+                                                                                                <variation key="heightClass=regular-widthClass=regular">
+                                                                                                    <fontDescription key="fontDescription" name="DroidArabicNaskh-Bold" family="Droid Arabic Naskh" pointSize="20"/>
+                                                                                                </variation>
+                                                                                            </label>
+                                                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="******" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V1e-P6-IUP">
+                                                                                                <rect key="frame" x="0.0" y="40" width="344" height="35"/>
+                                                                                                <nil key="textColor"/>
+                                                                                                <fontDescription key="fontDescription" name="DroidArabicNaskh-Bold" family="Droid Arabic Naskh" pointSize="16"/>
+                                                                                                <textInputTraits key="textInputTraits" keyboardAppearance="alert" secureTextEntry="YES"/>
+                                                                                            </textField>
+                                                                                        </subviews>
+                                                                                    </stackView>
+                                                                                </subviews>
+                                                                            </stackView>
+                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HTX-Bc-LEL">
+                                                                                <rect key="frame" x="0.0" y="85" width="344" height="1"/>
+                                                                                <subviews>
+                                                                                    <view contentMode="scaleToFill" horizontalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="edS-IS-bHC">
+                                                                                        <rect key="frame" x="10" y="0.0" width="334" height="1"/>
+                                                                                        <color key="backgroundColor" name="separator"/>
+                                                                                    </view>
+                                                                                </subviews>
+                                                                                <constraints>
+                                                                                    <constraint firstItem="edS-IS-bHC" firstAttribute="leading" secondItem="HTX-Bc-LEL" secondAttribute="leading" constant="10" id="K8m-0W-IFP"/>
+                                                                                    <constraint firstAttribute="bottom" secondItem="edS-IS-bHC" secondAttribute="bottom" id="UxH-3B-Ymj"/>
+                                                                                    <constraint firstItem="edS-IS-bHC" firstAttribute="top" secondItem="HTX-Bc-LEL" secondAttribute="top" id="YaQ-jn-Nu4"/>
+                                                                                    <constraint firstAttribute="height" constant="1" id="tSR-SO-6hj"/>
+                                                                                </constraints>
+                                                                            </view>
+                                                                        </subviews>
+                                                                        <constraints>
+                                                                            <constraint firstItem="edS-IS-bHC" firstAttribute="trailing" secondItem="M3M-Jq-8Ct" secondAttribute="trailing" id="LEk-1R-ncz"/>
+                                                                        </constraints>
+                                                                    </stackView>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="wWC-HB-IeW">
+                                                                        <rect key="frame" x="0.0" y="202" width="344" height="80"/>
+                                                                        <subviews>
+                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DkD-RT-Ckn">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="121" height="80"/>
+                                                                                <fontDescription key="fontDescription" name="DroidArabicNaskh-Bold" family="Droid Arabic Naskh" pointSize="16"/>
+                                                                                <state key="normal" title="نسيت كلمة المرور">
+                                                                                    <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                </state>
+                                                                            </button>
+                                                                            <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GXp-Ez-19l">
+                                                                                <rect key="frame" x="262" y="0.0" width="82" height="80"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="height" constant="80" id="7Jl-yU-5Nm"/>
+                                                                                </constraints>
+                                                                                <fontDescription key="fontDescription" name="DroidArabicNaskh-Bold" family="Droid Arabic Naskh" pointSize="16"/>
+                                                                                <state key="normal" title="  تذكرني" image="checked">
+                                                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                                </state>
+                                                                            </button>
+                                                                        </subviews>
+                                                                    </stackView>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7uL-hw-m67" customClass="ButtonShadow" customModule="fruitsApp" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="297" width="344" height="55"/>
+                                                                        <color key="backgroundColor" name="yellow"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="55" id="5Ri-5B-cJf"/>
+                                                                        </constraints>
+                                                                        <fontDescription key="fontDescription" name="SefidUI-Bold" family="Sefid UI" pointSize="18"/>
+                                                                        <state key="normal" title="دخول">
+                                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        </state>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                                <integer key="value" value="8"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                    </button>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstItem="V1e-P6-IUP" firstAttribute="height" secondItem="xpq-Tm-6Fg" secondAttribute="height" id="mrW-VO-TxU"/>
+                                                                </constraints>
+                                                            </stackView>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstItem="YVG-M3-bJj" firstAttribute="leading" secondItem="KkZ-yG-xix" secondAttribute="leading" constant="15" id="K9K-rH-o39"/>
+                                                            <constraint firstItem="YVG-M3-bJj" firstAttribute="top" secondItem="KkZ-yG-xix" secondAttribute="top" constant="25" id="SJz-Ew-sb3"/>
+                                                            <constraint firstAttribute="height" secondItem="YVG-M3-bJj" secondAttribute="height" constant="50" id="omU-AQ-puo"/>
+                                                            <constraint firstAttribute="trailing" secondItem="YVG-M3-bJj" secondAttribute="trailing" constant="15" id="sPr-Gy-e6g"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <integer key="value" value="10"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="cxo-wc-x2l" secondAttribute="trailing" constant="20" id="8nF-3D-pQi"/>
+                                            <constraint firstItem="cxo-wc-x2l" firstAttribute="leading" secondItem="Qfa-Sb-LGI" secondAttribute="leading" constant="20" id="RJ1-wq-Ppd"/>
+                                            <constraint firstAttribute="height" secondItem="cxo-wc-x2l" secondAttribute="height" constant="50" id="X9L-tX-Rlu"/>
+                                            <constraint firstItem="cxo-wc-x2l" firstAttribute="top" secondItem="Qfa-Sb-LGI" secondAttribute="top" constant="50" id="zxP-Un-ZC8"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Qfa-Sb-LGI" firstAttribute="width" secondItem="coV-me-C9D" secondAttribute="width" id="4KY-AC-Sh7"/>
+                                    <constraint firstItem="Qfa-Sb-LGI" firstAttribute="top" secondItem="coV-me-C9D" secondAttribute="top" id="8Vv-hZ-B9w"/>
+                                    <constraint firstAttribute="trailing" secondItem="Qfa-Sb-LGI" secondAttribute="trailing" id="R61-Rh-D7H"/>
+                                    <constraint firstItem="Qfa-Sb-LGI" firstAttribute="leading" secondItem="coV-me-C9D" secondAttribute="leading" id="k8X-1w-UkF"/>
+                                    <constraint firstAttribute="bottom" secondItem="Qfa-Sb-LGI" secondAttribute="bottom" id="kOR-Rv-QKZ"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="coV-me-C9D" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="0XA-FC-PQK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="coV-me-C9D" secondAttribute="trailing" id="33Y-4U-Fsd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="coV-me-C9D" secondAttribute="bottom" id="Hdo-oL-qKj"/>
+                            <constraint firstItem="coV-me-C9D" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="d8T-NU-hhA"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--الرئيسية-->
+        <scene sceneID="ln9-A0-jym">
+            <objects>
+                <viewController title="الرئيسية" id="37D-tE-IkC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ttX-Az-Gdo">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="JcB-ur-URY">
+                                <rect key="frame" x="0.0" y="44" width="414" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="j0D-PJ-ply"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="egb-h5-2Wc">
+                                    <size key="itemSize" width="121" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="ixk-in-iCx">
+                                        <rect key="frame" x="0.0" y="0.0" width="121" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="121" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_complate" translatesAutoresizingMaskIntoConstraints="NO" id="7Ca-Az-yCo">
+                                                    <rect key="frame" x="20.5" y="0.0" width="80" height="80"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="80" id="3K2-ya-GD9"/>
+                                                        <constraint firstAttribute="width" constant="80" id="gyU-bW-Twa"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="حضروات" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ITX-ao-SRR">
+                                                    <rect key="frame" x="30.5" y="90" width="60" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="7Ca-Az-yCo" firstAttribute="top" secondItem="ixk-in-iCx" secondAttribute="top" id="T2x-JT-Vv0"/>
+                                            <constraint firstItem="ITX-ao-SRR" firstAttribute="top" secondItem="7Ca-Az-yCo" secondAttribute="bottom" constant="10" id="Y6i-se-uiF"/>
+                                            <constraint firstItem="7Ca-Az-yCo" firstAttribute="centerX" secondItem="ixk-in-iCx" secondAttribute="centerX" id="jrc-hR-5Ji"/>
+                                            <constraint firstItem="ITX-ao-SRR" firstAttribute="centerX" secondItem="ixk-in-iCx" secondAttribute="centerX" id="lr9-fj-z9N"/>
+                                        </constraints>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="JcB-ur-URY" firstAttribute="leading" secondItem="dLN-hB-sVh" secondAttribute="leading" id="NR8-cp-ffr"/>
+                            <constraint firstItem="dLN-hB-sVh" firstAttribute="trailing" secondItem="JcB-ur-URY" secondAttribute="trailing" id="SS1-Un-WDt"/>
+                            <constraint firstItem="JcB-ur-URY" firstAttribute="top" secondItem="dLN-hB-sVh" secondAttribute="top" id="qRW-p9-m6N"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dLN-hB-sVh"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gZ6-8e-GNY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1828.985507246377" y="81.696428571428569"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="checked" width="24" height="24"/>
+        <image name="ic_complate" width="246" height="246"/>
+        <namedColor name="Walnut">
+            <color red="0.41568627450980394" green="0.2196078431372549" blue="0.10196078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="dark Magenta">
+            <color name="ibMissingResourceColor" catalog="#$assets-com.apple.dt.DVTKit" colorSpace="catalog"/>
+        </namedColor>
+        <namedColor name="separator">
+            <color name="ibMissingResourceColor" catalog="#$assets-com.apple.dt.DVTKit" colorSpace="catalog"/>
+        </namedColor>
+        <namedColor name="yellow">
+            <color red="0.99607843137254903" green="0.85490196078431369" blue="0.062745098039215685" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="DroidNaskh-Bold.ttf">
+            <string>DroidArabicNaskh-Bold</string>
+        </array>
+        <array key="DroidNaskh-Regular.ttf">
+            <string>DroidArabicNaskh</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="loginAlert" customModule="perfume" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="5wA-6L-YH2" id="xeK-ER-wLt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clipsSubviews="YES" contentMode="scaleToFill" id="5wA-6L-YH2">
+            <rect key="frame" x="0.0" y="0.0" width="332" height="202"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U5J-3E-D6e" customClass="ViewShadow" customModule="perfume" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="332" height="202"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="khe-Gb-Out">
+                            <rect key="frame" x="287" y="20" width="25" height="25"/>
+                            <constraints>
+                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="25" id="5yK-PN-UZw"/>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="25" id="6ev-qy-HoH"/>
+                                <constraint firstAttribute="width" constant="25" id="QUU-Nj-KuE"/>
+                                <constraint firstAttribute="height" constant="25" id="Uvl-b8-86N"/>
+                            </constraints>
+                            <state key="normal" backgroundImage="ic_close"/>
+                            <connections>
+                                <action selector="close" destination="-1" eventType="touchUpInside" id="Qdw-KR-gAB"/>
+                            </connections>
+                        </button>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="rng-zR-ngR">
+                            <rect key="frame" x="20" y="20" width="292" height="135"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="فضلا" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DzU-rL-lvF">
+                                    <rect key="frame" x="0.0" y="0.0" width="292" height="31"/>
+                                    <fontDescription key="fontDescription" name="DroidArabicNaskh-Bold" family="Droid Arabic Naskh" pointSize="16"/>
+                                    <color key="textColor" name="Walnut"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="سجل دخولك أولا لأستكمال الشراء" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4dl-Y2-bJw">
+                                    <rect key="frame" x="0.0" y="46" width="292" height="31"/>
+                                    <fontDescription key="fontDescription" name="DroidArabicNaskh" family="Droid Arabic Naskh" pointSize="16"/>
+                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="v4P-Gz-wst">
+                                    <rect key="frame" x="0.0" y="92" width="292" height="43"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oFx-cI-m9i">
+                                            <rect key="frame" x="0.0" y="0.0" width="136" height="43"/>
+                                            <color key="backgroundColor" name="yellow"/>
+                                            <fontDescription key="fontDescription" name="DroidArabicNaskh-Bold" family="Droid Arabic Naskh" pointSize="16"/>
+                                            <state key="normal" title="عميل جديد">
+                                                <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="signup" destination="-1" eventType="touchUpInside" id="BG0-DY-dDj"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pga-bf-QpT">
+                                            <rect key="frame" x="156" y="0.0" width="136" height="43"/>
+                                            <color key="backgroundColor" name="yellow"/>
+                                            <fontDescription key="fontDescription" name="DroidArabicNaskh-Bold" family="Droid Arabic Naskh" pointSize="16"/>
+                                            <state key="normal" title="دخول">
+                                                <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="login" destination="-1" eventType="touchUpInside" id="dta-1Q-vEJ"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="khe-Gb-Out" firstAttribute="top" secondItem="U5J-3E-D6e" secondAttribute="top" constant="20" id="T2T-qo-kdA"/>
+                        <constraint firstAttribute="width" constant="332" id="UL2-mb-F68"/>
+                        <constraint firstAttribute="height" constant="202" id="daD-iY-bgj"/>
+                        <constraint firstAttribute="trailing" secondItem="khe-Gb-Out" secondAttribute="trailing" constant="20" id="eTB-pK-jTe"/>
+                        <constraint firstAttribute="trailing" secondItem="rng-zR-ngR" secondAttribute="trailing" constant="20" id="lUf-XM-cR0"/>
+                        <constraint firstItem="rng-zR-ngR" firstAttribute="leading" secondItem="U5J-3E-D6e" secondAttribute="leading" constant="20" id="q3J-8Q-7qU"/>
+                        <constraint firstItem="rng-zR-ngR" firstAttribute="top" secondItem="U5J-3E-D6e" secondAttribute="top" constant="20" id="toY-Ya-PUZ"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="20"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="U5J-3E-D6e" secondAttribute="trailing" id="FvW-Av-BMQ"/>
+                <constraint firstItem="U5J-3E-D6e" firstAttribute="leading" secondItem="5wA-6L-YH2" secondAttribute="leading" id="VcJ-3f-KnK"/>
+                <constraint firstItem="U5J-3E-D6e" firstAttribute="top" secondItem="5wA-6L-YH2" secondAttribute="top" id="kDS-Ft-k8X"/>
+                <constraint firstItem="U5J-3E-D6e" firstAttribute="bottom" secondItem="5wA-6L-YH2" secondAttribute="bottom" id="rWg-us-F13"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vxf-GT-A5D"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                    <integer key="value" value="20"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <point key="canvasLocation" x="660.86956521739137" y="-8.7053571428571423"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ic_close" width="24" height="24"/>
+        <namedColor name="Walnut">
+            <color red="0.41568627450980394" green="0.2196078431372549" blue="0.10196078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="yellow">
+            <color red="0.99607843137254903" green="0.85490196078431369" blue="0.062745098039215685" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
